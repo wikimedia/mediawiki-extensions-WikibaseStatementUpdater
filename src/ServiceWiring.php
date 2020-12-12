@@ -1,0 +1,48 @@
+<?php
+declare( strict_types=1 );
+
+use MediaWiki\Extensions\WikibaseStatementUpdater\AccessTokenStore;
+use MediaWiki\Extensions\WikibaseStatementUpdater\Batch\BatchListStore;
+use MediaWiki\Extensions\WikibaseStatementUpdater\Batch\BatchStore;
+use MediaWiki\Extensions\WikibaseStatementUpdater\Updater\UpdateManager;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\OAuthClient\Client;
+use MediaWiki\OAuthClient\ClientConfig;
+use MediaWiki\OAuthClient\Consumer;
+
+/** @phpcs-require-sorted-array */
+return [
+	'WSU:AccessTokenStore' => function (): AccessTokenStore {
+		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
+		return new AccessTokenStore( $cache );
+	},
+
+	'WSU:BatchListStore' => function ( MediaWikiServices $s ): BatchListStore {
+		return new BatchListStore( $s->getDBLoadBalancer()->getConnectionRef( DB_MASTER ) );
+	},
+
+	'WSU:BatchStore' => function ( MediaWikiServices $s ): BatchStore {
+		return new BatchStore( $s->getDBLoadBalancer()->getConnectionRef( DB_MASTER ) );
+	},
+
+	'WSU:OAuthClient' => function ( MediaWikiServices $s ): Client {
+		$configOption = $s->getMainConfig()->get( 'WSUClientConfig' );
+
+		$authUrl = wfExpandUrl( wfAppendQuery( wfScript(), 'title=Special:OAuth' ) );
+		$conf = new ClientConfig( $authUrl );
+		$conf->setConsumer(
+			new Consumer( $configOption['key'], $configOption['secret'] )
+		);
+		return new Client( $conf );
+	},
+
+	'WSU:UpdateManager' => function ( MediaWikiServices $s ): UpdateManager {
+		return new UpdateManager(
+			$s->get( 'WSU:BatchStore' ),
+			$s->get( 'WSU:BatchListStore' ),
+			$s->get( 'WSU:AccessTokenStore' ),
+			$s->get( 'WSU:OAuthClient' ),
+			wfExpandUrl( wfScript( 'api' ) )
+		);
+	},
+];
