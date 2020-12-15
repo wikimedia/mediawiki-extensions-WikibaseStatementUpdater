@@ -264,6 +264,10 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		return $errorMessage->parseAsBlock() . '<pre>' . $lineText . '</pre>';
 	}
 
+	/**
+	 * @param int $batchId
+	 * @suppress PhanTypeMismatchArgumentNullable FIXME $list can be null
+	 */
 	private function scheduleBatch( int $batchId ) {
 		$list = $this->batchListStore->get( $batchId );
 		$this->batchListStore->updateStatus( $list, 'started' );
@@ -285,6 +289,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 
 	private function stopBatch( int $batchId ) {
 		$list = $this->batchListStore->get( $batchId );
+		// @phan-suppress-next-line PhanTypeMismatchArgumentNullable FIXME $list can be null
 		$this->batchListStore->updateStatus( $list, 'stopped' );
 	}
 
@@ -350,7 +355,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		}
 
 		$output->addHTML(
-			Html::element( 'h2', null, $list->getName() )
+			Html::element( 'h2', [], $list->getName() )
 		);
 
 		$batchStore = new BatchStore( $db );
@@ -399,7 +404,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 				$status = Html::element( 'a', [ 'href' => $diffUrl ], $itemStatus );
 			} else {
 				if ( isset( $itemOutput['i18n'] ) ) {
-					$itemMessage = $this->msg( ...$itemOutput['i18n'] );
+					$itemMessage = $this->msg( ...$itemOutput['i18n'] )->text();
 				} else {
 					$itemMessage = $itemOutput['message'] ?? '';
 				}
@@ -454,7 +459,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 				$output->addHTML(
 					Html::rawElement(
 						'li',
-						null,
+						[],
 						Html::element(
 							'a',
 							[

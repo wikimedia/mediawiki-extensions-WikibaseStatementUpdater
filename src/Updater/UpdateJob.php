@@ -26,8 +26,9 @@ class UpdateJob extends Job implements GenericParameterJob {
 		);
 	}
 
-	public function run(): void {
+	public function run(): bool {
 		$updateManager = Services::getInstance()->getUpdateManager();
 		$updateManager->process( $this->params['batchItemId'], $this->params['batchListId'] );
+		return true;
 	}
 }

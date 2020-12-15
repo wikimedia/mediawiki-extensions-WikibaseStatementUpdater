@@ -40,6 +40,11 @@ class UpdateManager {
 		$this->api = $api;
 	}
 
+	/**
+	 * @param int $batchItemId
+	 * @param int $batchListId
+	 * @suppress PhanTypeMismatchArgumentNullable FIXME $record and $accessToken can be null
+	 */
 	public function process( int $batchItemId, int $batchListId ): void {
 		$record = $this->batchStore->getRecord( $batchItemId );
 		$list = $this->batchListStore->get( $batchListId );

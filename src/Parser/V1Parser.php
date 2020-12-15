@@ -44,6 +44,7 @@ class V1Parser {
 				// TODO: $commandId = $m[1];
 				throw new UnsupportedCommand( $lineNumber, $line );
 			} else {
+				// @phan-suppress-previous-line PhanPluginDuplicateIfStatements
 				throw new UnsupportedCommand( $lineNumber, $line );
 			}
 
