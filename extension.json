@@ -22,7 +22,7 @@
 		"src/ServiceWiring.php"
 	],
 	"ExtensionMessagesFiles": {
-		"WikibaseStatementUpdaterAlias": "Alias.php"
+		"WikibaseStatementUpdaterAlias": "WikibaseStatementUpdater.alias.php"
 	},
 	"MessagesDirs": {
 		"WikibaseStatementUpdater": "i18n"

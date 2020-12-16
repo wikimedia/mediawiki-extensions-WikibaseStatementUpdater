@@ -1,5 +1,6 @@
 {
 	"wsu-extension-name": "Wikibase Statement Updater",
+	"wsu-desc": "Tool for both updating and adding Wikibase statements",
 	"wsu-special-wikibasestatementupdater": "Mass update statements",
 	"wsu-wsu-batch-title": "Batch name",
 	"wsu-wsu-batch-contents": "Commands in Quick Statements V1 format",
