@@ -12,9 +12,11 @@ use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
 class Hooks implements LoadExtensionSchemaUpdatesHook {
 	public function onLoadExtensionSchemaUpdates( $updater ): void {
 		$dir = dirname( __DIR__ );
+		$type = $updater->getDB()->getType();
+
 		$updater->addExtensionTable(
 			'wsu_batchlist',
-			$dir . '/schemas/tables-generated.sql'
+			"$dir/schemas/$type/tables-generated.sql"
 		);
 	}
 }
