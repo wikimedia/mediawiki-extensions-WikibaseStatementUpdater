@@ -117,7 +117,8 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 
 		if ( !$accessToken ) {
 			$this->getOutput()->addWikiMsg(
-				[ 'wsu-give-permission', 'Special:WikibaseStatementUpdater/auth' ]
+				'wsu-give-permission',
+				'Special:WikibaseStatementUpdater/auth'
 			);
 			return;
 		}
