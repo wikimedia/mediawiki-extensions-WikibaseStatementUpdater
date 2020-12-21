@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"YaronSh"
+		]
+	},
+	"wsu-wsu-error-linetooshort": "השורה $1 קצרה מדי.",
+	"wsu-wsu-error-unsupportedcommand": "פקודה לא ידועה.",
+	"wsu-goback": "חזרה לרשימות",
+	"wsu-command-P": "מאפיין",
+	"wsu-batchtable-subject": "נושא",
+	"wsu-batchtable-command": "פקודה",
+	"wsu-batchtable-value": "ערך",
+	"wsu-batchtable-status": "מצב"
+}

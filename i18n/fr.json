@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cantons-de-l'Est"
+		]
+	},
+	"wsu-desc": "Outil pour mettre à jour et ajouter des déclarations de Wikibase",
+	"wsu-special-wikibasestatementupdater": "Mise à jour massive des déclarations",
+	"wsu-wsu-batch-contents": "Commandes au format Quick Statements V1",
+	"wsu-wsu-error": "Ne peut analyser les commandes : $1",
+	"wsu-wsu-error-linetooshort": "Ligne $1 est trop courte.",
+	"wsu-wsu-error-onlyq": "Seuls les Q-items sont supportés.",
+	"wsu-wsu-error-unsupportedcommand": "Commande inconnue.",
+	"wsu-start": "(Re)commencer la modification",
+	"wsu-stop": "Cesser de modifier",
+	"wsu-updater-api-failure": "Incapable d'analyser la réponse de l'API",
+	"wsu-give-permission": "Cet outil exige votre permission pour modifier en votre nom. [[$1|Donner permissions]].",
+	"wsu-batchtable-subject": "Objet",
+	"wsu-batchtable-command": "Commande",
+	"wsu-batchtable-id": "ID",
+	"wsu-batchtable-value": "Valeur",
+	"wsu-batchtable-status": "Statut"
+}

@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"MuratTheTurkish"
+		]
+	},
+	"wsu-extension-name": "Wikibase Statement Updater",
+	"wsu-desc": "Wikibase deyimlerini hem güncellemek hem de eklemek için araç",
+	"wsu-special-wikibasestatementupdater": "Toplu güncelleme beyanları",
+	"wsu-wsu-batch-title": "Toplu adı",
+	"wsu-wsu-batch-contents": "Hızlı İfadeler V1 biçimindeki komutlar",
+	"wsu-wsu-error": "Komutlar ayrıştırılamıyor: $1",
+	"wsu-wsu-error-linetooshort": "$1 satırı çok kısa.",
+	"wsu-wsu-error-noqualifiers": "Niteleyiciler henüz desteklenmiyor.",
+	"wsu-wsu-error-onlyq": "Yalnızca Q öğeleri desteklenir.",
+	"wsu-wsu-error-unsupportedcommand": "Bilinmeyen komut.",
+	"wsu-your-batches": "Aşağıdaki grupları oluşturdunuz:",
+	"wsu-unknown-batch": "Bilinmeyen toplu",
+	"wsu-goback": "Listeye dön",
+	"wsu-start": "Düzenleme (yeniden) başlayın",
+	"wsu-stop": "Düzenlemeyi durdur",
+	"wsu-updater-api-failure": "API yanıtı ayrıştırılamıyor",
+	"wsu-updater-ambiguous-update": "Özelliğe birden çok ifade var",
+	"wsu-give-permission": "Bu aracın sizin adınıza düzenleme yapmak için izne ihtiyacı var. [[$1|İzin verin]].",
+	"wsu-create-batch": "Yeni toplu oluştur",
+	"wsu-command-P": "Özellik",
+	"wsu-batchtable-subject": "Konu",
+	"wsu-batchtable-command": "Komut",
+	"wsu-batchtable-id": "Kimlik",
+	"wsu-batchtable-value": "Değer",
+	"wsu-batchtable-status": "Durum"
+}

@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Alefar"
+		]
+	},
+	"wsu-extension-name": "Wikibase Statement Updater",
+	"wsu-wsu-batch-title": "Batch name",
+	"wsu-wsu-batch-contents": "Commands in Quick Statements V1 format",
+	"wsu-wsu-error": "Unable to parse the commands: $1",
+	"wsu-wsu-error-noqualifiers": "Qualifiers are not yet supported.",
+	"wsu-wsu-error-onlyq": "Only Q-items are supported.",
+	"wsu-wsu-error-unsupportedcommand": "Unknown command.",
+	"wsu-start": "(Re)start editing",
+	"wsu-command-P": "Property",
+	"wsu-batchtable-subject": "Subject"
+}

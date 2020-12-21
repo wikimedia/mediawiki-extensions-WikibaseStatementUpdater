@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
 	"wsu-extension-name": "{{name}}",
 	"wsu-desc": "{{desc|name=Wikibase Statement Updater|url=https://www.mediawiki.org/wiki/Extension:WikibaseStatementUpdater}}",
 	"wsu-special-wikibasestatementupdater": "{{doc-special|WikibaseStatementUpdater}}",
@@ -22,6 +27,6 @@
 	"wsu-batchtable-subject": "Table column header. Subject as in Wikibase item.",
 	"wsu-batchtable-command": "Table column header. Command means one of property, label, description, alias or sitelink.",
 	"wsu-batchtable-id": "Table column header. Either property number or language code or sitelink code.",
-	"wsu-batchtable-value": "Table column header. Value of a property in the input.",
+	"wsu-batchtable-value": "Table column header. Value of a property in the input.\n{{identical|Value}}",
 	"wsu-batchtable-status": "Table column header. Status of the update process for a row."
 }
