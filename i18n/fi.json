@@ -1,9 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Maantietäjä",
 			"Nike"
 		]
 	},
+	"wsu-extension-name": "Wikibase-lauseen päivitys",
+	"wsu-desc": "Työkalu Wikibase-lauseiden päivittämiseen ja lisäämiseen",
+	"wsu-special-wikibasestatementupdater": "Joukkopäivityslausunnot",
 	"wsu-wsu-batch-title": "Erän nimi",
 	"wsu-wsu-batch-contents": "Komennot Quick Statements V1 -muodossa",
 	"wsu-wsu-error": "Komennon jäsentäminen epäonnistui: $1",
@@ -16,6 +20,7 @@
 	"wsu-goback": "Takaisin listaan",
 	"wsu-start": "Aloita (uudelleen) muokkaaminen",
 	"wsu-stop": "Pysäytä muokkaaminen",
+	"wsu-updater-api-failure": "API-vastauksen jäsentäminen epäonnistui",
 	"wsu-updater-ambiguous-update": "Ominaisuudella on useita esityksiä",
 	"wsu-give-permission": "Tämä työkalu tarvitsee luvan tehdä muokkauksia puolestasi. [[$1|Anna lupa]].",
 	"wsu-create-batch": "Luo uusi erä",
