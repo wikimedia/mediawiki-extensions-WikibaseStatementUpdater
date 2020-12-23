@@ -4,5 +4,8 @@
 			"Saederup92"
 		]
 	},
-	"wsu-command-P": "Egenskab"
+	"wsu-wsu-error-unsupportedcommand": "Ukendt kommando.",
+	"wsu-command-P": "Egenskab",
+	"wsu-batchtable-command": "Kommando",
+	"wsu-batchtable-value": "Værdi"
 }

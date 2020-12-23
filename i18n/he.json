@@ -7,6 +7,7 @@
 	"wsu-wsu-error-linetooshort": "השורה $1 קצרה מדי.",
 	"wsu-wsu-error-unsupportedcommand": "פקודה לא ידועה.",
 	"wsu-goback": "חזרה לרשימות",
+	"wsu-updater-api-failure": "לא ניתן לפענח את תגובת ה־API",
 	"wsu-command-P": "מאפיין",
 	"wsu-batchtable-subject": "נושא",
 	"wsu-batchtable-command": "פקודה",
