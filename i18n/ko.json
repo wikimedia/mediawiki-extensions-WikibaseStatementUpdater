@@ -11,7 +11,7 @@
 	"wsu-goback": "목록으로 돌아가기",
 	"wsu-start": "편집 (재)시작",
 	"wsu-stop": "편집 중지",
-	"wsu-give-permission": "이 도구는 당신을 대신하여 편집할 권한이 필요합니다. [[$1|권한을 부여하십시오]].",
+	"wsu-give-permission": "이 도구는 {{GENDER:|당신을}} 대신하여 편집할 권한이 필요합니다. [[$1|권한을 부여하십시오]].",
 	"wsu-command-P": "속성",
 	"wsu-batchtable-subject": "주제",
 	"wsu-batchtable-command": "명령",

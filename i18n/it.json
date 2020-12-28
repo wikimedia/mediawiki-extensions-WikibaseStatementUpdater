@@ -6,6 +6,7 @@
 	},
 	"wsu-wsu-error-onlyq": "Sono supportati solo elementi Q.",
 	"wsu-command-P": "Proprietà",
+	"wsu-batchtable-id": "ID",
 	"wsu-batchtable-value": "Valore",
 	"wsu-batchtable-status": "Stato"
 }
