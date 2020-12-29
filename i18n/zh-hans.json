@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			")8"
+		]
+	},
+	"wsu-batchtable-subject": "主题",
+	"wsu-batchtable-id": "ID",
+	"wsu-batchtable-value": "值",
+	"wsu-batchtable-status": "状态"
+}
