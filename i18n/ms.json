@@ -4,6 +4,7 @@
 			"Tofeiku"
 		]
 	},
+	"wsu-wsu-error-linetooshort": "Baris $1 terlalu pendek.",
 	"wsu-stop": "Berhenti menyunting",
 	"wsu-batchtable-id": "Id",
 	"wsu-batchtable-value": "Nilai"

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"YaronSh"
+			"YaronSh",
+			"ישראל קלר"
 		]
 	},
 	"wsu-wsu-error-linetooshort": "השורה $1 קצרה מדי.",
@@ -11,6 +12,7 @@
 	"wsu-command-P": "מאפיין",
 	"wsu-batchtable-subject": "נושא",
 	"wsu-batchtable-command": "פקודה",
+	"wsu-batchtable-id": "מזהה",
 	"wsu-batchtable-value": "ערך",
 	"wsu-batchtable-status": "מצב"
 }
