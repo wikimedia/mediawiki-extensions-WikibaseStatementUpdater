@@ -1,4 +1,7 @@
 {
+	"@metadata": {
+		"authors": []
+	},
 	"wsu-extension-name": "Wikibase Statement Updater",
 	"wsu-desc": "Tool for both updating and adding Wikibase statements",
 	"wsu-special-wikibasestatementupdater": "Mass update statements",
