@@ -20,7 +20,10 @@ class BatchStore {
 		$this->db = $db;
 	}
 
-	/** @param BatchItem[] $items */
+	/**
+	 * @param BatchListRecord $list
+	 * @param BatchItem[] $items
+	 */
 	public function addItems( BatchListRecord $list, array $items ) {
 		$rows = [];
 		foreach ( $items as $item ) {
