@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Nike",
 			"Robby"
 		]
 	},
 	"wsu-extension-name": "{{name}}",
 	"wsu-desc": "{{desc|name=Wikibase Statement Updater|url=https://www.mediawiki.org/wiki/Extension:WikibaseStatementUpdater}}",
-	"wsu-special-wikibasestatementupdater": "{{doc-special|WikibaseStatementUpdater}}",
+	"wsu-special-wikibasestatementupdater": "{{doc-special|WikibaseStatementUpdater}}\n\nThe verb is \"Mass update\" and object is \"statements\".",
 	"wsu-wsu-batch-title": "Title for a form input",
 	"wsu-wsu-batch-contents": "Help message for a form input",
 	"wsu-wsu-error": "Error message. $1 contains more information",

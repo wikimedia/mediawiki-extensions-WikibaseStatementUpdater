@@ -7,7 +7,7 @@
 	},
 	"wsu-extension-name": "Wikibase-lauseen päivitys",
 	"wsu-desc": "Työkalu Wikibase-lauseiden päivittämiseen ja lisäämiseen",
-	"wsu-special-wikibasestatementupdater": "Joukkopäivityslausunnot",
+	"wsu-special-wikibasestatementupdater": "Lausuntojen joukkopäivitys",
 	"wsu-wsu-batch-title": "Erän nimi",
 	"wsu-wsu-batch-contents": "Komennot Quick Statements V1 -muodossa",
 	"wsu-wsu-error": "Komennon jäsentäminen epäonnistui: $1",
