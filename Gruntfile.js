@@ -1,8 +1,12 @@
+/* eslint-env node, es6 */
 module.exports = function ( grunt ) {
-	grunt.loadNpmTasks( 'grunt-banana-checker' );
-
 	var conf = grunt.file.readJSON( 'extension.json' );
+
+	grunt.loadNpmTasks( 'grunt-banana-checker' );
+	grunt.loadNpmTasks( 'grunt-eslint' );
+
 	grunt.initConfig( {
+		// eslint-disable-next-line es/no-object-assign, compat/compat
 		banana: Object.assign(
 			conf.MessagesDirs,
 			{
@@ -10,9 +14,19 @@ module.exports = function ( grunt ) {
 					requireLowerCase: 'initial'
 				}
 			}
-		)
+		),
+		eslint: {
+			options: {
+				cache: true
+			},
+			all: [
+				'**/*.{js,json}',
+				'!node_modules/**',
+				'!vendor/**'
+			]
+		}
 	} );
 
-	grunt.registerTask( 'test', [ 'banana' ] );
+	grunt.registerTask( 'test', [ 'eslint', 'banana' ] );
 	grunt.registerTask( 'default', 'test' );
 };
