@@ -12,20 +12,20 @@ use MediaWiki\OAuthClient\Consumer;
 
 /** @phpcs-require-sorted-array */
 return [
-	'WSU:AccessTokenStore' => function (): AccessTokenStore {
+	'WSU:AccessTokenStore' => static function (): AccessTokenStore {
 		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
 		return new AccessTokenStore( $cache );
 	},
 
-	'WSU:BatchListStore' => function ( MediaWikiServices $s ): BatchListStore {
+	'WSU:BatchListStore' => static function ( MediaWikiServices $s ): BatchListStore {
 		return new BatchListStore( $s->getDBLoadBalancer()->getConnectionRef( DB_MASTER ) );
 	},
 
-	'WSU:BatchStore' => function ( MediaWikiServices $s ): BatchStore {
+	'WSU:BatchStore' => static function ( MediaWikiServices $s ): BatchStore {
 		return new BatchStore( $s->getDBLoadBalancer()->getConnectionRef( DB_MASTER ) );
 	},
 
-	'WSU:OAuthClient' => function ( MediaWikiServices $s ): Client {
+	'WSU:OAuthClient' => static function ( MediaWikiServices $s ): Client {
 		$configOption = $s->getMainConfig()->get( 'WSUClientConfig' );
 
 		$authUrl = wfExpandUrl( wfAppendQuery( wfScript(), 'title=Special:OAuth' ) );
@@ -36,7 +36,7 @@ return [
 		return new Client( $conf );
 	},
 
-	'WSU:UpdateManager' => function ( MediaWikiServices $s ): UpdateManager {
+	'WSU:UpdateManager' => static function ( MediaWikiServices $s ): UpdateManager {
 		return new UpdateManager(
 			$s->get( 'WSU:BatchStore' ),
 			$s->get( 'WSU:BatchListStore' ),
