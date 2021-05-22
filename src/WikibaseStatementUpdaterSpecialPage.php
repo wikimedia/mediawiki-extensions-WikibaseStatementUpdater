@@ -129,30 +129,32 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		}
 
 		$batchId = $request->getVal( 'batch' );
-		if ( $batchId !== null ) {
-			$ok =
-				$request->wasPosted() &&
-				$this->getUser()->matchEditToken( $request->getVal( 'token' ) );
-
-			if ( $request->getCheck( 'start' ) ) {
-				if ( !$ok ) {
-					throw new ThrottledError();
-				}
-
-				$this->scheduleBatch( (int)$batchId );
-			} elseif ( $request->getCheck( 'stop' ) ) {
-				if ( !$ok ) {
-					throw new ThrottledError();
-				}
-
-				$this->stopBatch( (int)$batchId );
-			}
-
-			$this->showBatch( (int)$batchId );
-			return;
+		if ( $batchId === null ) {
+			$this->showBatchList();
 		}
 
-		$this->showBatchList();
+		$ok =
+			$request->wasPosted() &&
+			$this->getUser()->matchEditToken( $request->getVal( 'token' ) );
+		$redirectAfterAction = $this->getFullTitle()->getLocalURL( [ 'batch' => $batchId ] );
+
+		if ( $request->getCheck( 'start' ) ) {
+			if ( !$ok ) {
+				throw new ThrottledError();
+			}
+
+			$this->scheduleBatch( (int)$batchId );
+			$this->getOutput()->redirect( $redirectAfterAction );
+		} elseif ( $request->getCheck( 'stop' ) ) {
+			if ( !$ok ) {
+				throw new ThrottledError();
+			}
+
+			$this->stopBatch( (int)$batchId );
+			$this->getOutput()->redirect( $redirectAfterAction );
+		} else {
+			$this->showBatch( (int)$batchId );
+		}
 	}
 
 	private function finishAuth( string $oauthVerifier ): void {
