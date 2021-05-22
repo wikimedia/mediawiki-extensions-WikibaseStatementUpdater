@@ -29,5 +29,7 @@
 	"wsu-batchtable-command": "Table column header. Command means one of property, label, description, alias or sitelink.",
 	"wsu-batchtable-id": "Table column header. Either property number or language code or sitelink code.",
 	"wsu-batchtable-value": "Table column header. Value of a property in the input.\n{{identical|Value}}",
-	"wsu-batchtable-status": "Table column header. Status of the update process for a row."
+	"wsu-batchtable-status": "Table column header. Status of the update process for a row.",
+	"wsu-js-batchtable-status": "Summary line. Parameters:\n*$1 percentage number\n*$2 number",
+	"apihelp-wikibasestatementupdater-summary": "{{doc-apihelp-description|wikibasestatementupdater}}"
 }

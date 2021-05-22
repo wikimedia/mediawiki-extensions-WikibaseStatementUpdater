@@ -26,5 +26,7 @@
 	"wsu-batchtable-command": "Command",
 	"wsu-batchtable-id": "ID",
 	"wsu-batchtable-value": "Value",
-	"wsu-batchtable-status": "Status"
+	"wsu-batchtable-status": "Status",
+	"wsu-js-batchtable-status": "$1% complete. {{PLURAL:$2|0=|$2 failed}}.",
+	"apihelp-wikibasestatementupdater-summary": "Manage Wikibase Statement Updater batches"
 }

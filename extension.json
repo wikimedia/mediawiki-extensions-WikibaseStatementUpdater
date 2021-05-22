@@ -31,6 +31,14 @@
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extensions\\WikibaseStatementUpdater\\": "src/"
 	},
+	"APIModules": {
+		"wikibasestatementupdater": {
+			"class": "MediaWiki\\Extensions\\WikibaseStatementUpdater\\WikibaseStatementUpdaterActionApi",
+			"services": [
+				"DBLoadBalancer"
+			]
+		}
+	},
 	"SpecialPages": {
 		"WikibaseStatementUpdater": {
 			"factory": "MediaWiki\\Extensions\\WikibaseStatementUpdater\\WikibaseStatementUpdaterSpecialPage::factory"
@@ -48,5 +56,26 @@
 	},
 	"JobClasses": {
 		"WSUUpdateJob": "\\MediaWiki\\Extensions\\WikibaseStatementUpdater\\Updater\\UpdateJob"
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources/src",
+		"remoteExtPath": "WikibaseStatementUpdater/resources/src"
+	},
+	"ResourceModules": {
+		"ext.wsu": {
+			"packageFiles": "wsu/index.js",
+			"styles": "wsu/index.less",
+			"dependencies": [
+				"mediawiki.api",
+				"mediawiki.jqueryMsg"
+			],
+			"messages": [
+				"wsu-js-batchtable-status"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		}
 	}
 }

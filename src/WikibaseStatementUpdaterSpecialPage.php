@@ -292,8 +292,9 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 
 	private function stopBatch( int $batchId ) {
 		$list = $this->batchListStore->get( $batchId );
-		// @phan-suppress-next-line PhanTypeMismatchArgumentNullable FIXME $list can be null
-		$this->batchListStore->updateStatus( $list, 'stopped' );
+		if ( $list ) {
+			$this->batchListStore->updateStatus( $list, 'stopped' );
+		}
 	}
 
 	private function showBatch( int $id ): void {
@@ -304,6 +305,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 
 		$output = $this->getOutput();
 		$output->enableOOUI();
+		$output->addModules( 'ext.wsu' );
 
 		$form = new FormLayout(
 			[
@@ -358,7 +360,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		}
 
 		$output->addHTML(
-			Html::element( 'h2', [], $list->getName() )
+			Html::element( 'h2', [ 'class' => 'mw-ext-wsu-heading' ], $list->getName() )
 		);
 
 		$batchStore = new BatchStore( $db );

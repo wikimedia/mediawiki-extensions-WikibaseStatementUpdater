@@ -27,6 +27,7 @@ class BatchListRecord extends BatchList {
 		parent::__construct( $name, $owner );
 		$this->id = $id;
 		$this->createdAt = $createdAt;
+		$this->status = $status;
 	}
 
 	public function getId(): int {

@@ -43,7 +43,7 @@ class BatchListStore {
 	public function getForUser( UserIdentity $user ): array {
 		$res = $this->db->select(
 			self::TABLE,
-			[ 'wsubl_id', 'wsubl_name', 'wsubl_createdat' ],
+			[ 'wsubl_id', 'wsubl_name', 'wsubl_createdat', 'wsubl_status' ],
 			[ 'wsubl_actor' => $user->getActorId() ],
 			__METHOD__
 		);
@@ -51,7 +51,11 @@ class BatchListStore {
 		$lists = [];
 		foreach ( $res as $row ) {
 			$lists[] = new BatchListRecord(
-				$row->wsubl_name, $user, (int)$row->wsubl_id, (int)$row->wsubl_createdat
+				$row->wsubl_name,
+				$user,
+				(int)$row->wsubl_id,
+				(int)$row->wsubl_createdat,
+				$row->wsubl_status
 			);
 		}
 		return $lists;
@@ -60,7 +64,7 @@ class BatchListStore {
 	public function get( int $id ): ?BatchListRecord {
 		$row = $this->db->selectRow(
 			self::TABLE,
-			[ 'wsubl_id', 'wsubl_name', 'wsubl_actor', 'wsubl_createdat' ],
+			[ 'wsubl_id', 'wsubl_name', 'wsubl_actor', 'wsubl_createdat', 'wsubl_status' ],
 			[ 'wsubl_id' => $id ],
 			__METHOD__
 		);
@@ -72,7 +76,11 @@ class BatchListStore {
 		$user = User::newFromActorId( $row->wsubl_actor );
 
 		return new BatchListRecord(
-			$row->wsubl_name, $user, (int)$row->wsubl_id, (int)$row->wsubl_createdat
+			$row->wsubl_name,
+			$user,
+			(int)$row->wsubl_id,
+			(int)$row->wsubl_createdat,
+			$row->wsubl_status
 		);
 	}
 
