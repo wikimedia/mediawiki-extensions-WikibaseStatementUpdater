@@ -15,8 +15,6 @@ use Psr\Container\ContainerInterface;
  * @license GPL-2.0-or-later
  */
 class Services implements ContainerInterface {
-	/** @var self */
-	private static $instance;
 	/** @var ContainerInterface */
 	private $container;
 
@@ -25,8 +23,7 @@ class Services implements ContainerInterface {
 	}
 
 	public static function getInstance(): Services {
-		self::$instance = self::$instance ?? new self( MediaWikiServices::getInstance() );
-		return self::$instance;
+		return new self( MediaWikiServices::getInstance() );
 	}
 
 	public function getAccessTokenStore(): AccessTokenStore {
