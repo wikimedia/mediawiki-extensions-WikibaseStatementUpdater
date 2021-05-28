@@ -131,6 +131,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		$batchId = $request->getVal( 'batch' );
 		if ( $batchId === null ) {
 			$this->showBatchList();
+			return;
 		}
 
 		$ok =
