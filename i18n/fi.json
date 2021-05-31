@@ -29,5 +29,6 @@
 	"wsu-batchtable-command": "Komento",
 	"wsu-batchtable-id": "ID",
 	"wsu-batchtable-value": "Arvo",
-	"wsu-batchtable-status": "Tila"
+	"wsu-batchtable-status": "Tila",
+	"wsu-js-batchtable-status": "$1 % valmis. {{PLURAL:$2|0=|$2 epäonnistunut|$2 epäonnistunutta.}}"
 }

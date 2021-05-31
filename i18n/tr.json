@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Hedda",
+			"Mim.saitkilic",
 			"MuratTheTurkish"
 		]
 	},
@@ -29,5 +30,7 @@
 	"wsu-batchtable-command": "Komut",
 	"wsu-batchtable-id": "Kimlik",
 	"wsu-batchtable-value": "Değer",
-	"wsu-batchtable-status": "Durum"
+	"wsu-batchtable-status": "Durum",
+	"wsu-js-batchtable-status": "%1 tamamlandı. {{PLURAL: $ 2 | 0 = | $ 2 başarısız oldu}}.",
+	"apihelp-wikibasestatementupdater-summary": "Wikibase Statement Updater gruplarını yönetin"
 }
