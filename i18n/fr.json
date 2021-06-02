@@ -31,5 +31,7 @@
 	"wsu-batchtable-command": "Commande",
 	"wsu-batchtable-id": "ID",
 	"wsu-batchtable-value": "Valeur",
-	"wsu-batchtable-status": "État"
+	"wsu-batchtable-status": "État",
+	"wsu-js-batchtable-status": "$1% terminé. {{PLURAL:$2|0=|$2 en échec.}}",
+	"apihelp-wikibasestatementupdater-summary": "Gérer les lots de mise à jour de déclaration de Wikibase"
 }
