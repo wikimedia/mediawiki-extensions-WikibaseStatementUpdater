@@ -3,7 +3,8 @@
 		"authors": [
 			"Hedda",
 			"Mim.saitkilic",
-			"MuratTheTurkish"
+			"MuratTheTurkish",
+			"SaldırganSincap"
 		]
 	},
 	"wsu-extension-name": "Wikibase Statement Updater",
@@ -31,6 +32,6 @@
 	"wsu-batchtable-id": "Kimlik",
 	"wsu-batchtable-value": "Değer",
 	"wsu-batchtable-status": "Durum",
-	"wsu-js-batchtable-status": "%1 tamamlandı. {{PLURAL: $ 2 | 0 = | $ 2 başarısız oldu}}.",
+	"wsu-js-batchtable-status": "%$1 tamamlandı. {{PLURAL:$2|0=|$2 başarısız oldu}}.",
 	"apihelp-wikibasestatementupdater-summary": "Wikibase Statement Updater gruplarını yönetin"
 }
