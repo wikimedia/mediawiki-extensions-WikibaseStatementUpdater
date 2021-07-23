@@ -15,6 +15,8 @@ function showBatchStatus() {
 		return;
 	}
 
+	let wasProcessing = false;
+
 	const api = new mw.Api();
 
 	const updateBatchStatus = function () {
@@ -36,11 +38,15 @@ function showBatchStatus() {
 			);
 			const failedCount = wsu.error;
 
-			status.textContent = mw.message( 'wsu-js-batchtable-status', completionRate, failedCount ).parse();
+			status.innerHTML = mw.message( 'wsu-js-batchtable-status', completionRate, failedCount ).parse();
 
 			if ( wsu.status === 'started' && wsu.incomplete > 0 ) {
+				wasProcessing = true;
 				status.appendChild( spinner );
 				return true;
+			} else if ( wsu.status === 'started' && wsu.incomplete === 0 && wasProcessing ) {
+				location.reload();
+				return false;
 			}
 
 			return false;

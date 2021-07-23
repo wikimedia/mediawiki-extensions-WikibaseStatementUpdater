@@ -6,6 +6,8 @@ namespace MediaWiki\Extensions\WikibaseStatementUpdater\Batch;
 use IDatabase;
 use stdClass;
 use Wikimedia\ObjectFactory;
+use const JSON_UNESCAPED_SLASHES;
+use const JSON_UNESCAPED_UNICODE;
 
 /**
  * @author Niklas Laxström
@@ -29,7 +31,7 @@ class BatchStore {
 		foreach ( $items as $item ) {
 			$rows[] = [
 				'wsub_batch' => $list->getId(),
-				'wsub_input' => json_encode( $item->getSpec() ),
+				'wsub_input' => $this->serialise( $item->getSpec() ),
 			];
 		}
 
@@ -54,10 +56,10 @@ class BatchStore {
 
 	private function makeRecord( stdClass $row ): BatchItemRecord {
 		/** @var BatchItem $item */
-		$item = ObjectFactory::getObjectFromSpec( json_decode( $row->wsub_input, true ) );
+		$item = ObjectFactory::getObjectFromSpec( $this->unserialize( $row->wsub_input ) );
 
 		return new BatchItemRecord(
-			(int)$row->wsub_id, $item, json_decode( $row->wsub_output ?? '[]', true ),
+			(int)$row->wsub_id, $item, $this->unserialize( $row->wsub_output ?? '[]' ),
 		);
 	}
 
@@ -72,12 +74,20 @@ class BatchStore {
 		return $row ? $this->makeRecord( $row ) : null;
 	}
 
-	public function updateOutput( BatchItemRecord $record ) {
+	public function updateOutput( BatchItemRecord $record ): void {
 		$this->db->update(
 			self::TABLE,
-			[ 'wsub_output' => json_encode( $record->getOutput() ) ],
+			[ 'wsub_output' => $this->serialise( $record->getOutput() ) ],
 			[ 'wsub_id' => $record->getId() ],
 			__METHOD__
 		);
+	}
+
+	private function serialise( array $x ): string {
+		return json_encode( $x, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+	}
+
+	private function unserialize( string $x ): array {
+		return json_decode( $x, true );
 	}
 }

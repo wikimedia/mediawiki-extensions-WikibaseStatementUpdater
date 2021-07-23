@@ -285,6 +285,9 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 				continue;
 			}
 
+			$item->setOutput( [] );
+			$this->batchStore->updateOutput( $item );
+
 			$jobs[] = UpdateJob::newJob( $item->getId(), $list->getId() );
 		}
 
