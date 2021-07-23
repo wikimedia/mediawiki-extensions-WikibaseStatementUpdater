@@ -4,6 +4,7 @@
 			"Sabelöga"
 		]
 	},
+	"wsu-extension-name": "Wikibase Statement Updater",
 	"wsu-desc": "Verktyg både för att uppdatera och lägga till uttalanden i Wikibase",
 	"wsu-special-wikibasestatementupdater": "Massuppdatering av uttalanden",
 	"wsu-wsu-batch-title": "Namn på omgången",
@@ -27,5 +28,7 @@
 	"wsu-batchtable-command": "Kommando",
 	"wsu-batchtable-id": "ID",
 	"wsu-batchtable-value": "Värde",
-	"wsu-batchtable-status": "Status"
+	"wsu-batchtable-status": "Status",
+	"wsu-js-batchtable-status": "$1% slutfört. {{PLURAL:$2|0=|$2 misslyckades.}}",
+	"apihelp-wikibasestatementupdater-summary": "Hantera Wikibase Statement Updater-batchar."
 }
