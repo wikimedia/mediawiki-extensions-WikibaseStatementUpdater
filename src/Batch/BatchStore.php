@@ -3,9 +3,9 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extensions\WikibaseStatementUpdater\Batch;
 
-use IDatabase;
 use stdClass;
 use Wikimedia\ObjectFactory;
+use Wikimedia\Rdbms\IDatabase;
 use const JSON_UNESCAPED_SLASHES;
 use const JSON_UNESCAPED_UNICODE;
 

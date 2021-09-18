@@ -4,9 +4,9 @@ declare( strict_types=1 );
 namespace MediaWiki\Extensions\WikibaseStatementUpdater\Batch;
 
 use DateTime;
-use IDatabase;
 use MediaWiki\User\UserIdentity;
 use User;
+use Wikimedia\Rdbms\IDatabase;
 
 /**
  * @author Niklas Laxström
