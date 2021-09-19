@@ -30,7 +30,7 @@ use Psr\Log\LoggerInterface;
 use SpecialPage;
 use ThrottledError;
 use Title;
-use const DB_MASTER;
+use const DB_PRIMARY;
 use const DB_REPLICA;
 
 /**
@@ -490,7 +490,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 
 	public function createBatch( array $data ) {
 		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
-		$db = $lb->getConnectionRef( DB_MASTER );
+		$db = $lb->getConnectionRef( DB_PRIMARY );
 
 		$parser = new V1Parser();
 		$items = $parser->parse( $data['input'] );
