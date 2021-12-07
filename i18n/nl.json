@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Romaine"
+		]
+	},
+	"wsu-command-P": "Eigenschap",
+	"wsu-batchtable-subject": "Onderwerp",
+	"wsu-batchtable-command": "Commando",
+	"wsu-batchtable-id": "ID",
+	"wsu-batchtable-value": "Waarde",
+	"wsu-batchtable-status": "Status"
+}
