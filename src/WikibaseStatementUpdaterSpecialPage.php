@@ -70,13 +70,14 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 
 	public static function factory(): self {
 		$services = Services::getInstance();
+		$mwServices = MediaWikiServices::getInstance();
 		return new self(
 			$services->getAccessTokenStore(),
 			$services->getOAuthClient(),
 			$services->getBatchListStore(),
 			$services->getBatchStore(),
 			LoggerFactory::getInstance( 'WikibaseStatementUpdater' ),
-			JobQueueGroup::singleton()
+			$mwServices->getJobQueueGroup()
 		);
 	}
 
