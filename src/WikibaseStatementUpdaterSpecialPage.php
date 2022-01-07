@@ -30,6 +30,7 @@ use Psr\Log\LoggerInterface;
 use SpecialPage;
 use ThrottledError;
 use Title;
+use Wikimedia\Rdbms\ILoadBalancer;
 use const DB_PRIMARY;
 use const DB_REPLICA;
 
@@ -50,6 +51,8 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 	private $logger;
 	/** @var JobQueueGroup */
 	private $jobQueueGroup;
+	/** @var ILoadBalancer */
+	private $dbLoadBalancer;
 
 	public function __construct(
 		AccessTokenStore $accessTokenStore,
@@ -57,7 +60,8 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		BatchListStore $batchListStore,
 		BatchStore $batchStore,
 		LoggerInterface $logger,
-		JobQueueGroup $jobQueueGroup
+		JobQueueGroup $jobQueueGroup,
+		ILoadBalancer $dbLoadBalancer
 	) {
 		parent::__construct( 'WikibaseStatementUpdater' );
 		$this->accessTokenStore = $accessTokenStore;
@@ -66,6 +70,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		$this->batchStore = $batchStore;
 		$this->logger = $logger;
 		$this->jobQueueGroup = $jobQueueGroup;
+		$this->dbLoadBalancer = $dbLoadBalancer;
 	}
 
 	public static function factory(): self {
@@ -77,7 +82,8 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 			$services->getBatchListStore(),
 			$services->getBatchStore(),
 			LoggerFactory::getInstance( 'WikibaseStatementUpdater' ),
-			$mwServices->getJobQueueGroup()
+			$mwServices->getJobQueueGroup(),
+			$mwServices->getDBLoadBalancer()
 		);
 	}
 
@@ -303,8 +309,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 	}
 
 	private function showBatch( int $id ): void {
-		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
-		$db = $lb->getConnectionRef( DB_REPLICA );
+		$db = $this->dbLoadBalancer->getConnectionRef( DB_REPLICA );
 		$batchListStore = new BatchListStore( $db );
 		$list = $batchListStore->get( $id );
 
@@ -440,8 +445,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 	}
 
 	private function showBatchList() {
-		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
-		$db = $lb->getConnectionRef( DB_REPLICA );
+		$db = $this->dbLoadBalancer->getConnectionRef( DB_REPLICA );
 		$batchListStore = new BatchListStore( $db );
 		$batches = $batchListStore->getForUser( $this->getUser() );
 		$output = $this->getOutput();
@@ -490,8 +494,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 	}
 
 	public function createBatch( array $data ) {
-		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
-		$db = $lb->getConnectionRef( DB_PRIMARY );
+		$db = $this->dbLoadBalancer->getConnectionRef( DB_PRIMARY );
 
 		$parser = new V1Parser();
 		$items = $parser->parse( $data['input'] );
