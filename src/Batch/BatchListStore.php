@@ -1,7 +1,7 @@
 <?php
 declare( strict_types=1 );
 
-namespace MediaWiki\Extensions\WikibaseStatementUpdater\Batch;
+namespace MediaWiki\Extension\WikibaseStatementUpdater\Batch;
 
 use DateTime;
 use MediaWiki\User\UserIdentity;

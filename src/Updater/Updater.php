@@ -1,9 +1,9 @@
 <?php
 declare( strict_types=1 );
 
-namespace MediaWiki\Extensions\WikibaseStatementUpdater\Updater;
+namespace MediaWiki\Extension\WikibaseStatementUpdater\Updater;
 
-use MediaWiki\Extensions\WikibaseStatementUpdater\Batch\BatchItem;
+use MediaWiki\Extension\WikibaseStatementUpdater\Batch\BatchItem;
 use MediaWiki\OAuthClient\Client;
 use MediaWiki\OAuthClient\Exception;
 use MediaWiki\OAuthClient\Token;

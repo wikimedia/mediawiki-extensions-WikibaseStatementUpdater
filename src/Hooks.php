@@ -1,7 +1,7 @@
 <?php
 declare( strict_types=1 );
 
-namespace MediaWiki\Extensions\WikibaseStatementUpdater;
+namespace MediaWiki\Extension\WikibaseStatementUpdater;
 
 use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
 

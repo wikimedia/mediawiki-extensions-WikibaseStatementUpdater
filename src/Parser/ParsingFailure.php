@@ -1,7 +1,7 @@
 <?php
 declare( strict_types=1 );
 
-namespace MediaWiki\Extensions\WikibaseStatementUpdater\Parser;
+namespace MediaWiki\Extension\WikibaseStatementUpdater\Parser;
 
 use RuntimeException;
 

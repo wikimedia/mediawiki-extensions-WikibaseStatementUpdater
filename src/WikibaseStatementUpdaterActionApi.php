@@ -1,12 +1,12 @@
 <?php
 declare( strict_types=1 );
 
-namespace MediaWiki\Extensions\WikibaseStatementUpdater;
+namespace MediaWiki\Extension\WikibaseStatementUpdater;
 
 use ApiBase;
 use ApiMain;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Batch\BatchListStore;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Batch\BatchStore;
+use MediaWiki\Extension\WikibaseStatementUpdater\Batch\BatchListStore;
+use MediaWiki\Extension\WikibaseStatementUpdater\Batch\BatchStore;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\Rdbms\ILoadBalancer;
 use const DB_REPLICA;

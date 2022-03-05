@@ -3,9 +3,9 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extensions\WikibaseStatementUpdater\Updater;
 
-use MediaWiki\Extensions\WikibaseStatementUpdater\AccessTokenStore;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Batch\BatchListStore;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Batch\BatchStore;
+use MediaWiki\Extension\WikibaseStatementUpdater\AccessTokenStore;
+use MediaWiki\Extension\WikibaseStatementUpdater\Batch\BatchListStore;
+use MediaWiki\Extension\WikibaseStatementUpdater\Batch\BatchStore;
 use MediaWiki\OAuthClient\Client;
 
 /**

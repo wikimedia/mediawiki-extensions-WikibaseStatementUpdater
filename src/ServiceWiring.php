@@ -1,10 +1,10 @@
 <?php
 declare( strict_types=1 );
 
-use MediaWiki\Extensions\WikibaseStatementUpdater\AccessTokenStore;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Batch\BatchListStore;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Batch\BatchStore;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Updater\UpdateManager;
+use MediaWiki\Extension\WikibaseStatementUpdater\AccessTokenStore;
+use MediaWiki\Extension\WikibaseStatementUpdater\Batch\BatchListStore;
+use MediaWiki\Extension\WikibaseStatementUpdater\Batch\BatchStore;
+use MediaWiki\Extension\WikibaseStatementUpdater\Updater\UpdateManager;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\OAuthClient\Client;
 use MediaWiki\OAuthClient\ClientConfig;

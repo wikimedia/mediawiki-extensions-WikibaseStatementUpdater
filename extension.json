@@ -29,11 +29,11 @@
 		"WikibaseStatementUpdater": "i18n"
 	},
 	"AutoloadNamespaces": {
-		"MediaWiki\\Extensions\\WikibaseStatementUpdater\\": "src/"
+		"MediaWiki\\Extension\\WikibaseStatementUpdater\\": "src/"
 	},
 	"APIModules": {
 		"wikibasestatementupdater": {
-			"class": "MediaWiki\\Extensions\\WikibaseStatementUpdater\\WikibaseStatementUpdaterActionApi",
+			"class": "MediaWiki\\Extension\\WikibaseStatementUpdater\\WikibaseStatementUpdaterActionApi",
 			"services": [
 				"DBLoadBalancer"
 			]
@@ -41,12 +41,12 @@
 	},
 	"SpecialPages": {
 		"WikibaseStatementUpdater": {
-			"factory": "MediaWiki\\Extensions\\WikibaseStatementUpdater\\WikibaseStatementUpdaterSpecialPage::factory"
+			"factory": "MediaWiki\\Extension\\WikibaseStatementUpdater\\WikibaseStatementUpdaterSpecialPage::factory"
 		}
 	},
 	"HookHandlers": {
 		"WsuHookHandler": {
-			"class": "MediaWiki\\Extensions\\WikibaseStatementUpdater\\Hooks"
+			"class": "MediaWiki\\Extension\\WikibaseStatementUpdater\\Hooks"
 		}
 	},
 	"Hooks": {
@@ -55,7 +55,7 @@
 		}
 	},
 	"JobClasses": {
-		"WSUUpdateJob": "\\MediaWiki\\Extensions\\WikibaseStatementUpdater\\Updater\\UpdateJob"
+		"WSUUpdateJob": "MediaWiki\\Extension\\WikibaseStatementUpdater\\Updater\\UpdateJob"
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "resources/src",

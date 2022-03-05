@@ -1,21 +1,21 @@
 <?php
 declare( strict_types=1 );
 
-namespace MediaWiki\Extensions\WikibaseStatementUpdater;
+namespace MediaWiki\Extension\WikibaseStatementUpdater;
 
 use Html;
 use HTMLForm;
 use JobQueueGroup;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Batch\BatchList;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Batch\BatchListStore;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Batch\BatchStore;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Parser\LineTooShort;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Parser\OnlyQItemsSupported;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Parser\ParsingFailure;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Parser\QualifiersUnsupported;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Parser\UnsupportedCommand;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Parser\V1Parser;
-use MediaWiki\Extensions\WikibaseStatementUpdater\Updater\UpdateJob;
+use MediaWiki\Extension\WikibaseStatementUpdater\Batch\BatchList;
+use MediaWiki\Extension\WikibaseStatementUpdater\Batch\BatchListStore;
+use MediaWiki\Extension\WikibaseStatementUpdater\Batch\BatchStore;
+use MediaWiki\Extension\WikibaseStatementUpdater\Parser\LineTooShort;
+use MediaWiki\Extension\WikibaseStatementUpdater\Parser\OnlyQItemsSupported;
+use MediaWiki\Extension\WikibaseStatementUpdater\Parser\ParsingFailure;
+use MediaWiki\Extension\WikibaseStatementUpdater\Parser\QualifiersUnsupported;
+use MediaWiki\Extension\WikibaseStatementUpdater\Parser\UnsupportedCommand;
+use MediaWiki\Extension\WikibaseStatementUpdater\Parser\V1Parser;
+use MediaWiki\Extension\WikibaseStatementUpdater\Updater\UpdateJob;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\OAuthClient\Client;

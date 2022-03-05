@@ -1,9 +1,9 @@
 <?php
 declare( strict_types=1 );
 
-namespace MediaWiki\Extensions\WikibaseStatementUpdater\Parser;
+namespace MediaWiki\Extension\WikibaseStatementUpdater\Parser;
 
-use MediaWiki\Extensions\WikibaseStatementUpdater\Batch\BatchItem;
+use MediaWiki\Extension\WikibaseStatementUpdater\Batch\BatchItem;
 
 /**
  * @author Niklas Laxström
