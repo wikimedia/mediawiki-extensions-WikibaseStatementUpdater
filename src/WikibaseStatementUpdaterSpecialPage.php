@@ -349,7 +349,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 			);
 			$buttons[] = new ButtonInputWidget(
 				[
-					'icon' => 'stopHand',
+					'icon' => 'hand',
 					'type' => 'submit',
 					'name' => 'stop',
 					'label' => $this->msg( 'wsu-stop' )->plain(),
