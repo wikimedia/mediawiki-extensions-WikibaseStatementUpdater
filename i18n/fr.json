@@ -29,7 +29,7 @@
 	"wsu-command-P": "Propriété",
 	"wsu-batchtable-subject": "Objet",
 	"wsu-batchtable-command": "Commande",
-	"wsu-batchtable-id": "ID",
+	"wsu-batchtable-id": "Identifiant",
 	"wsu-batchtable-value": "Valeur",
 	"wsu-batchtable-status": "État",
 	"wsu-js-batchtable-status": "$1 % terminé. {{PLURAL:$2|0=|$2 en échec.}}",
