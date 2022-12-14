@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kly"
+			"Kly",
+			"捍粵者"
 		]
 	},
 	"wsu-special-wikibasestatementupdater": "批量更新聲明",
-	"wsu-wsu-error-linetooshort": "第 $1 行太短。",
+	"wsu-wsu-error-linetooshort": "第$1行太短。",
 	"wsu-command-P": "屬性",
 	"wsu-batchtable-subject": "主題",
 	"wsu-batchtable-id": "ID",
