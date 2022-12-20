@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Nike",
-			"Robby"
+			"Robby",
+			"McDutchie"
 		]
 	},
 	"wsu-extension-name": "{{name}}",
@@ -12,7 +13,7 @@
 	"wsu-wsu-batch-contents": "Help message for a form input",
 	"wsu-wsu-error": "Error message. $1 contains more information",
 	"wsu-wsu-error-linetooshort": "Error message. $1 is a line number",
-	"wsu-wsu-error-noqualifiers": "Error message. Refers to Wikbiase statement qualifiers",
+	"wsu-wsu-error-noqualifiers": "Error message. Refers to Wikibase statement qualifiers",
 	"wsu-wsu-error-onlyq": "Error message. Refers to Wikibase Q-items.",
 	"wsu-wsu-error-unsupportedcommand": "Error message. Command means of property, label, description, alias or sitelink.",
 	"wsu-your-batches": "Label for a list.",
