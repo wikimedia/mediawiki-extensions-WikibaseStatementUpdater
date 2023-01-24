@@ -4,5 +4,7 @@
 			"Eleassar"
 		]
 	},
+	"wsu-start": "(Ponovni) začetek urejanja",
+	"wsu-stop": "Ustavi urejanje",
 	"wsu-create-batch": "Ustvari nov paket"
 }
