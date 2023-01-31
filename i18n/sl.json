@@ -4,7 +4,30 @@
 			"Eleassar"
 		]
 	},
+	"wsu-desc": "Orodje za posodabljanje in dodajanje izjav Wikibase",
+	"wsu-special-wikibasestatementupdater": "Množična posodobitev izjav",
+	"wsu-wsu-batch-title": "Ime paketa",
+	"wsu-wsu-batch-contents": "Ukazi v formatu Quick Statements V1",
+	"wsu-wsu-error": "Ni mogoče razčleniti ukazov: $1",
+	"wsu-wsu-error-linetooshort": "Vrstica $1 je prekratka.",
+	"wsu-wsu-error-noqualifiers": "Kvalifikatorji še niso podprti.",
+	"wsu-wsu-error-onlyq": "Podprti so samo predmeti Q.",
+	"wsu-wsu-error-unsupportedcommand": "Neznan ukaz.",
+	"wsu-your-batches": "{{GENDER:|Ustvarili}} ste naslednje pakete:",
+	"wsu-unknown-batch": "Neznan paket",
+	"wsu-goback": "Nazaj na seznam",
 	"wsu-start": "(Ponovni) začetek urejanja",
 	"wsu-stop": "Ustavi urejanje",
-	"wsu-create-batch": "Ustvari nov paket"
+	"wsu-updater-api-failure": "Odgovora API-ja ni mogoče razčleniti",
+	"wsu-updater-ambiguous-update": "Lastnost ima več izjav",
+	"wsu-give-permission": "To orodje potrebuje dovoljenje za urejanje v {{GENDER:|vašem}} imenu. [[$1|Podelite mu dovoljenja]].",
+	"wsu-create-batch": "Ustvari nov paket",
+	"wsu-command-P": "Lastnost",
+	"wsu-batchtable-subject": "Tema",
+	"wsu-batchtable-command": "Ukaz",
+	"wsu-batchtable-id": "ID",
+	"wsu-batchtable-value": "Vrednost",
+	"wsu-batchtable-status": "Stanje",
+	"wsu-js-batchtable-status": "$1&nbsp;% končano. {{PLURAL:$2|0=|$2 je spodletelo.}}",
+	"apihelp-wikibasestatementupdater-summary": "Upravljanje paketov Wikibase Statement Updater"
 }
