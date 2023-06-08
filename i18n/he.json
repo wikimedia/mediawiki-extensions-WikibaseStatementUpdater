@@ -1,18 +1,35 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"YaronSh",
 			"ישראל קלר"
 		]
 	},
+	"wsu-desc": "כלי לעדכון והוספה של קביעות ויקיבייס",
+	"wsu-special-wikibasestatementupdater": "עדכון קביעות מרובות",
+	"wsu-wsu-batch-title": "שם אצווה",
+	"wsu-wsu-batch-contents": "פקודות בתסדיר Quick Statements V1",
+	"wsu-wsu-error": "לא ניתן לפענח את הפקודות: $1",
 	"wsu-wsu-error-linetooshort": "השורה $1 קצרה מדי.",
+	"wsu-wsu-error-noqualifiers": "המבחינים עדיין לא נתמכים.",
+	"wsu-wsu-error-onlyq": "רק פריטי Q נתמכים",
 	"wsu-wsu-error-unsupportedcommand": "פקודה לא ידועה.",
+	"wsu-your-batches": "{{GENDER:|יצרת}} את האצוות הבאות:",
+	"wsu-unknown-batch": "אצווה לא ידועה",
 	"wsu-goback": "חזרה לרשימות",
+	"wsu-start": "אתחול עריכה",
+	"wsu-stop": "הפסקת עריכה",
 	"wsu-updater-api-failure": "לא ניתן לפענח את תגובת ה־API",
+	"wsu-updater-ambiguous-update": "למאפיין יש כמה קביעות",
+	"wsu-give-permission": "הכלי הזה זקוק להרשאה כדי לבצע עריכות {{GENDER:|בשםך}}. [[$1|לתת הרשאות]].",
+	"wsu-create-batch": "יצירת אצווה חדשה",
 	"wsu-command-P": "מאפיין",
 	"wsu-batchtable-subject": "נושא",
 	"wsu-batchtable-command": "פקודה",
 	"wsu-batchtable-id": "מזהה",
 	"wsu-batchtable-value": "ערך",
-	"wsu-batchtable-status": "מצב"
+	"wsu-batchtable-status": "מצב",
+	"wsu-js-batchtable-status": "התקדמות: $1%. {{PLURAL:$2|אחד נכשל.|$2 נכשלו.|0=}}",
+	"apihelp-wikibasestatementupdater-summary": "ניהול אצוות של עדכון קביעות ויקיבייס"
 }
