@@ -3,7 +3,8 @@
 		"authors": [
 			"McDutchie",
 			"Nike",
-			"Robby"
+			"Robby",
+			"Umherirrender"
 		]
 	},
 	"wsu-extension-name": "{{name}}",
@@ -32,5 +33,5 @@
 	"wsu-batchtable-value": "Table column header. Value of a property in the input.\n{{identical|Value}}",
 	"wsu-batchtable-status": "Table column header. Status of the update process for a row.",
 	"wsu-js-batchtable-status": "Summary line. Parameters:\n*$1 percentage number\n*$2 number",
-	"apihelp-wikibasestatementupdater-summary": "{{doc-apihelp-description|wikibasestatementupdater}}"
+	"apihelp-wikibasestatementupdater-summary": "{{doc-apihelp-summary|wikibasestatementupdater}}"
 }
