@@ -5,11 +5,30 @@
 			"捍粵者"
 		]
 	},
-	"wsu-special-wikibasestatementupdater": "批量更新聲明",
+	"wsu-desc": "用於更新和增加 Wikibase 陳述的工具",
+	"wsu-special-wikibasestatementupdater": "批量更新陳述",
+	"wsu-wsu-batch-title": "批次名稱",
+	"wsu-wsu-batch-contents": "Quick statements V1 格式的命令",
+	"wsu-wsu-error": "無法解析命令：$1",
 	"wsu-wsu-error-linetooshort": "第$1行太短。",
+	"wsu-wsu-error-noqualifiers": "尚未支援的修飾。",
+	"wsu-wsu-error-onlyq": "僅支援 Q 項目。",
+	"wsu-wsu-error-unsupportedcommand": "未知命令。",
+	"wsu-your-batches": "{{GENDER:|您}}已建立以下批次：",
+	"wsu-unknown-batch": "未知批次",
+	"wsu-goback": "返回清單",
+	"wsu-start": "（重新）開始編輯",
+	"wsu-stop": "停止編輯",
+	"wsu-updater-api-failure": "無法解析 API 回應",
+	"wsu-updater-ambiguous-update": "屬性有多個陳述",
+	"wsu-give-permission": "此工具需要授權才能代表{{GENDER:|您}}進行編輯。[[$1|授予權限]]。",
+	"wsu-create-batch": "建立新批次處理",
 	"wsu-command-P": "屬性",
 	"wsu-batchtable-subject": "主題",
+	"wsu-batchtable-command": "命令",
 	"wsu-batchtable-id": "ID",
 	"wsu-batchtable-value": "值",
-	"wsu-batchtable-status": "狀態"
+	"wsu-batchtable-status": "狀態",
+	"wsu-js-batchtable-status": "$1 完成。{{PLURAL:$2|0=|$2 個失敗。}}",
+	"apihelp-wikibasestatementupdater-summary": "管理 Wikibase 陳述更新批次處理"
 }
