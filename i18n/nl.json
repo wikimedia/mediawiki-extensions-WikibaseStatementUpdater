@@ -1,14 +1,35 @@
 {
 	"@metadata": {
 		"authors": [
+			"McDutchie",
 			"Romaine"
 		]
 	},
+	"wsu-extension-name": "Bijwerkprogramma Wikibase-verklaringen",
+	"wsu-desc": "Hulpmiddel voor het bijwerken en toevoegen van Wikibase-verklaringen",
+	"wsu-special-wikibasestatementupdater": "Massaal bijwerken van verklaringen",
+	"wsu-wsu-batch-title": "Partijnaam",
+	"wsu-wsu-batch-contents": "Commando’s in het formaat Quick Statements V1",
+	"wsu-wsu-error": "Niet in staat om de opdrachten te verwerken: $1",
+	"wsu-wsu-error-linetooshort": "Regel $1 is te kort.",
+	"wsu-wsu-error-noqualifiers": "Kwalificaties worden nog niet ondersteund.",
+	"wsu-wsu-error-onlyq": "Alleen Q-items worden ondersteund.",
+	"wsu-wsu-error-unsupportedcommand": "Onbekend commando.",
+	"wsu-your-batches": "U hebt de volgende partijen aangemaakt:",
+	"wsu-unknown-batch": "Onbekende partij",
+	"wsu-goback": "Terug naar de lijst",
+	"wsu-start": "(Opnieuw) beginnen met bewerken",
+	"wsu-stop": "Stoppen met bewerken",
+	"wsu-updater-api-failure": "Niet in staat om API-antwoord te verwerken",
+	"wsu-updater-ambiguous-update": "De eigenschap heeft meerdere verklaringen",
+	"wsu-give-permission": "Dit hulpmiddel heeft toestemming nodig om in uw naam bewerkingen aan te brengen. [[$1|Toestemming geven]].",
+	"wsu-create-batch": "Nieuwe partij aanmaken",
 	"wsu-command-P": "Eigenschap",
 	"wsu-batchtable-subject": "Onderwerp",
 	"wsu-batchtable-command": "Commando",
 	"wsu-batchtable-id": "ID",
 	"wsu-batchtable-value": "Waarde",
 	"wsu-batchtable-status": "Status",
-	"wsu-js-batchtable-status": "$1% compleet. {{PLURAL:$2|0=|$2 gefaald.}}"
+	"wsu-js-batchtable-status": "$1% voltooid. {{PLURAL:$2|0=|$2 mislukt.}}",
+	"apihelp-wikibasestatementupdater-summary": "Beheer van partijen in het bijwerkprogramma Wikibase-verklaringen"
 }
