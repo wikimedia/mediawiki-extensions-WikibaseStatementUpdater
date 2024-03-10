@@ -15,8 +15,7 @@ use Psr\Container\ContainerInterface;
  * @license GPL-2.0-or-later
  */
 class Services implements ContainerInterface {
-	/** @var ContainerInterface */
-	private $container;
+	private ContainerInterface $container;
 
 	private function __construct( ContainerInterface $container ) {
 		$this->container = $container;
@@ -36,7 +35,7 @@ class Services implements ContainerInterface {
 	}
 
 	/** @inheritDoc */
-	public function has( $id ) {
+	public function has( $id ): bool {
 		return $this->container->has( $id );
 	}
 

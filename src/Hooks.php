@@ -10,6 +10,7 @@ use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
  * @license GPL-2.0-or-later
  */
 class Hooks implements LoadExtensionSchemaUpdatesHook {
+	/** @inheritDoc */
 	public function onLoadExtensionSchemaUpdates( $updater ): void {
 		$dir = dirname( __DIR__ );
 		$type = $updater->getDB()->getType();

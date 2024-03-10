@@ -4,8 +4,8 @@ declare( strict_types=1 );
 namespace MediaWiki\Extension\WikibaseStatementUpdater\Batch;
 
 use DateTime;
-use MediaWiki\User\UserIdentity;
-use User;
+use MediaWiki;
+use MediaWiki\User\User;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
@@ -14,8 +14,7 @@ use Wikimedia\Rdbms\IDatabase;
  */
 class BatchListStore {
 	private const TABLE = 'wsu_batchlist';
-	/** @var IDatabase */
-	private $db;
+	private IDatabase $db;
 
 	public function __construct( IDatabase $db ) {
 		$this->db = $db;
@@ -40,7 +39,7 @@ class BatchListStore {
 	}
 
 	/** @return BatchListRecord[] */
-	public function getForUser( UserIdentity $user ): array {
+	public function getForUser( User $user ): array {
 		$res = $this->db->select(
 			self::TABLE,
 			[ 'wsubl_id', 'wsubl_name', 'wsubl_createdat', 'wsubl_status' ],
@@ -73,7 +72,8 @@ class BatchListStore {
 			return null;
 		}
 
-		$user = User::newFromActorId( $row->wsubl_actor );
+		$userFactory = MediaWiki\MediaWikiServices::getInstance()->getUserFactory();
+		$user = $userFactory->newFromActorId( $row->wsubl_actor );
 
 		return new BatchListRecord(
 			$row->wsubl_name,
@@ -84,7 +84,7 @@ class BatchListStore {
 		);
 	}
 
-	public function updateStatus( BatchListRecord $record, string $status = null ) {
+	public function updateStatus( BatchListRecord $record, string $status = null ): void {
 		$this->db->update(
 			self::TABLE,
 			[ 'wsubl_status' => $status ],

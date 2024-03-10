@@ -28,8 +28,9 @@ return [
 	'WSU:OAuthClient' => static function ( MediaWikiServices $s ): Client {
 		$configOption = $s->getMainConfig()->get( 'WSUClientConfig' );
 
-		$authUrl = wfExpandUrl( wfAppendQuery( wfScript(), 'title=Special:OAuth' ) );
-		$conf = new ClientConfig( $authUrl );
+		$urlUtils = $s->getUrlUtils();
+		$authUrl = $urlUtils->expand( wfAppendQuery( wfScript(), 'title=Special:OAuth' ) );
+		$conf = new ClientConfig( (string)$authUrl );
 		$conf->setConsumer(
 			new Consumer( $configOption['key'], $configOption['secret'] )
 		);
@@ -37,12 +38,14 @@ return [
 	},
 
 	'WSU:UpdateManager' => static function ( MediaWikiServices $s ): UpdateManager {
+		$urlUtils = $s->getUrlUtils();
+
 		return new UpdateManager(
 			$s->get( 'WSU:BatchStore' ),
 			$s->get( 'WSU:BatchListStore' ),
 			$s->get( 'WSU:AccessTokenStore' ),
 			$s->get( 'WSU:OAuthClient' ),
-			wfExpandUrl( wfScript( 'api' ) )
+			(string)$urlUtils->expand( wfScript( 'api' ) )
 		);
 	},
 ];

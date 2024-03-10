@@ -15,8 +15,7 @@ use const JSON_UNESCAPED_UNICODE;
  */
 class BatchStore {
 	private const TABLE = 'wsu_batch';
-	/** @var IDatabase */
-	private $db;
+	private IDatabase $db;
 
 	public function __construct( IDatabase $db ) {
 		$this->db = $db;
@@ -26,7 +25,7 @@ class BatchStore {
 	 * @param BatchListRecord $list
 	 * @param BatchItem[] $items
 	 */
-	public function addItems( BatchListRecord $list, array $items ) {
+	public function addItems( BatchListRecord $list, array $items ): void {
 		$rows = [];
 		foreach ( $items as $item ) {
 			$rows[] = [

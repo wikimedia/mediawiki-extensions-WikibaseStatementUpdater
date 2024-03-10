@@ -12,6 +12,7 @@ use MediaWiki\Extension\WikibaseStatementUpdater\Services;
  * @license GPL-2.0-or-later
  */
 class UpdateJob extends Job implements GenericParameterJob {
+	/** @inheritDoc */
 	public function __construct( $params = null ) {
 		parent::__construct( 'WSUUpdateJob', $params );
 		$this->removeDuplicates = true;
@@ -26,6 +27,7 @@ class UpdateJob extends Job implements GenericParameterJob {
 		);
 	}
 
+	/** @inheritDoc */
 	public function run(): bool {
 		$updateManager = Services::getInstance()->getUpdateManager();
 		$updateManager->process( $this->params['batchItemId'], $this->params['batchListId'] );

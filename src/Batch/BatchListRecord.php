@@ -3,23 +3,20 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\WikibaseStatementUpdater\Batch;
 
-use MediaWiki\User\UserIdentity;
+use MediaWiki\User\User;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
 class BatchListRecord extends BatchList {
-	/** @var int */
-	private $id;
-	/** @var int */
-	private $createdAt;
-	/** @var ?string */
-	private $status;
+	private int $id;
+	private int $createdAt;
+	private ?string $status;
 
 	public function __construct(
 		string $name,
-		UserIdentity $owner,
+		User $owner,
 		int $id,
 		int $createdAt,
 		string $status = null

@@ -30,29 +30,20 @@ use Psr\Log\LoggerInterface;
 use SpecialPage;
 use ThrottledError;
 use Title;
-use Wikimedia\Rdbms\ILoadBalancer;
-use const DB_PRIMARY;
-use const DB_REPLICA;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
 class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
-	/** @var AccessTokenStore */
-	private $accessTokenStore;
-	/** @var Client */
-	private $client;
-	/** @var BatchListStore */
-	private $batchListStore;
-	/** @var BatchStore */
-	private $batchStore;
-	/** @var LoggerInterface */
-	private $logger;
-	/** @var JobQueueGroup */
-	private $jobQueueGroup;
-	/** @var ILoadBalancer */
-	private $dbLoadBalancer;
+	private AccessTokenStore $accessTokenStore;
+	private Client $client;
+	private BatchListStore $batchListStore;
+	private BatchStore $batchStore;
+	private LoggerInterface $logger;
+	private JobQueueGroup $jobQueueGroup;
+	private IConnectionProvider $connectionProvider;
 
 	public function __construct(
 		AccessTokenStore $accessTokenStore,
@@ -61,7 +52,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		BatchStore $batchStore,
 		LoggerInterface $logger,
 		JobQueueGroup $jobQueueGroup,
-		ILoadBalancer $dbLoadBalancer
+		IConnectionProvider $connectionProvider
 	) {
 		parent::__construct( 'WikibaseStatementUpdater' );
 		$this->accessTokenStore = $accessTokenStore;
@@ -70,7 +61,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		$this->batchStore = $batchStore;
 		$this->logger = $logger;
 		$this->jobQueueGroup = $jobQueueGroup;
-		$this->dbLoadBalancer = $dbLoadBalancer;
+		$this->connectionProvider = $connectionProvider;
 	}
 
 	public static function factory(): self {
@@ -83,19 +74,22 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 			$services->getBatchStore(),
 			LoggerFactory::getInstance( 'WikibaseStatementUpdater' ),
 			$mwServices->getJobQueueGroup(),
-			$mwServices->getDBLoadBalancer()
+			$mwServices->getDBLoadBalancerFactory()
 		);
 	}
 
+	/** @inheritDoc */
 	public function getDescription(): string {
 		return $this->msg( 'wsu-special-wikibasestatementupdater' )->text();
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName(): string {
 		return 'wikibase';
 	}
 
-	public function execute( $subPage ) {
+	/** @inheritDoc */
+	public function execute( $subPage ): void {
 		parent::execute( $subPage );
 		$this->requireLogin();
 
@@ -143,7 +137,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 
 		$ok =
 			$request->wasPosted() &&
-			$this->getUser()->matchEditToken( $request->getVal( 'token' ) );
+			$this->getContext()->getCsrfTokenSet()->matchTokenField( 'token' );
 		$redirectAfterAction = $this->getFullTitle()->getLocalURL( [ 'batch' => $batchId ] );
 
 		if ( $request->getCheck( 'start' ) ) {
@@ -202,7 +196,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		$this->getOutput()->redirect( $authUrl );
 	}
 
-	private function showBatchCreationForm() {
+	private function showBatchCreationForm(): void {
 		$form = HTMLForm::factory(
 			'ooui',
 			$this->getFormFields(),
@@ -279,7 +273,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 	 * @param int $batchId
 	 * @suppress PhanTypeMismatchArgumentNullable FIXME $list can be null
 	 */
-	private function scheduleBatch( int $batchId ) {
+	private function scheduleBatch( int $batchId ): void {
 		$list = $this->batchListStore->get( $batchId );
 		$this->batchListStore->updateStatus( $list, 'started' );
 
@@ -301,7 +295,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		$this->jobQueueGroup->push( $jobs );
 	}
 
-	private function stopBatch( int $batchId ) {
+	private function stopBatch( int $batchId ): void {
 		$list = $this->batchListStore->get( $batchId );
 		if ( $list ) {
 			$this->batchListStore->updateStatus( $list, 'stopped' );
@@ -309,7 +303,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 	}
 
 	private function showBatch( int $id ): void {
-		$db = $this->dbLoadBalancer->getConnectionRef( DB_REPLICA );
+		$db = $this->connectionProvider->getReplicaDatabase();
 		$batchListStore = new BatchListStore( $db );
 		$list = $batchListStore->get( $id );
 
@@ -324,8 +318,9 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 			]
 		);
 
+		$token = $this->getContext()->getCsrfTokenSet()->getToken();
 		$form->appendContent(
-			new HtmlSnippet( Html::hidden( 'token', $this->getUser()->getEditToken() ) )
+			new HtmlSnippet( Html::hidden( 'token', $token ) )
 		);
 
 		$buttons = [];
@@ -419,6 +414,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 				$status = Html::element( 'a', [ 'href' => $diffUrl ], $itemStatus );
 			} else {
 				if ( isset( $itemOutput['i18n'] ) ) {
+					// @phan-suppress-next-line PhanParamTooFewUnpack
 					$itemMessage = $this->msg( ...$itemOutput['i18n'] )->text();
 				} else {
 					$itemMessage = $itemOutput['message'] ?? '';
@@ -444,8 +440,8 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		);
 	}
 
-	private function showBatchList() {
-		$db = $this->dbLoadBalancer->getConnectionRef( DB_REPLICA );
+	private function showBatchList(): void {
+		$db = $this->connectionProvider->getReplicaDatabase();
 		$batchListStore = new BatchListStore( $db );
 		$batches = $batchListStore->getForUser( $this->getUser() );
 		$output = $this->getOutput();
@@ -493,8 +489,8 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		}
 	}
 
-	public function createBatch( array $data ) {
-		$db = $this->dbLoadBalancer->getConnectionRef( DB_PRIMARY );
+	public function createBatch( array $data ): void {
+		$db = $this->connectionProvider->getPrimaryDatabase();
 
 		$parser = new V1Parser();
 		$items = $parser->parse( $data['input'] );
