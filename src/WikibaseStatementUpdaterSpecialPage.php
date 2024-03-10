@@ -175,10 +175,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		try {
 			$this->client->identify( $accessToken );
 		} catch ( Exception $e ) {
-			$this->getOutput()->wrapWikiTextAsInterface(
-				'errorbox',
-				$e->getMessage()
-			);
+			$this->getOutput()->addWikiTextAsInterface( Html::errorBox( $e->getMessage() ) );
 			$this->logger->warning( $e->getMessage() );
 			return;
 		}
