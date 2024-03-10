@@ -8,27 +8,26 @@ use ApiMain;
 use MediaWiki\Extension\WikibaseStatementUpdater\Batch\BatchListStore;
 use MediaWiki\Extension\WikibaseStatementUpdater\Batch\BatchStore;
 use Wikimedia\ParamValidator\ParamValidator;
-use Wikimedia\Rdbms\ILoadBalancer;
-use const DB_REPLICA;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
 class WikibaseStatementUpdaterActionApi extends ApiBase {
-	/** @var ILoadBalancer */
-	private $loadBalancer;
+	private IConnectionProvider $loadBalancer;
 
-	public function __construct( ApiMain $mainModule, $moduleName, ILoadBalancer $loadBalancer ) {
+	/** @inheritDoc */
+	public function __construct( ApiMain $mainModule, $moduleName, IConnectionProvider $loadBalancer ) {
 		parent::__construct( $mainModule, $moduleName );
 		$this->loadBalancer = $loadBalancer;
 	}
 
 	/** @inheritDoc */
-	public function execute() {
+	public function execute(): void {
 		$id = $this->getParameter( 'batch' );
 
-		$db = $this->loadBalancer->getConnectionRef( DB_REPLICA );
+		$db = $this->loadBalancer->getReplicaDatabase();
 		$batchListStore = new BatchListStore( $db );
 		$list = $batchListStore->get( $id );
 
@@ -67,11 +66,13 @@ class WikibaseStatementUpdaterActionApi extends ApiBase {
 		);
 	}
 
-	public function needsToken() {
+	/** @inheritDoc */
+	public function needsToken(): string {
 		return 'csrf';
 	}
 
-	protected function getAllowedParams() {
+	/** @inheritDoc */
+	protected function getAllowedParams(): array {
 		return [
 			'batch' => [
 				ParamValidator::PARAM_TYPE => 'integer',

@@ -8,12 +8,9 @@ namespace MediaWiki\Extension\WikibaseStatementUpdater\Batch;
  * @license GPL-2.0-or-later
  */
 class BatchItemRecord {
-	/** @var int */
-	private $id;
-	/** @var BatchItem */
-	private $item;
-	/** @var array */
-	private $output;
+	private int $id;
+	private BatchItem $item;
+	private array $output;
 
 	public function __construct(
 		int $id,
@@ -37,7 +34,7 @@ class BatchItemRecord {
 		return $this->output;
 	}
 
-	public function setOutput( array $output ) {
+	public function setOutput( array $output ): void {
 		$this->output = $output;
 	}
 }

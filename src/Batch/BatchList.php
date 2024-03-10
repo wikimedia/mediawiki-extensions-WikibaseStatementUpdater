@@ -3,21 +3,19 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\WikibaseStatementUpdater\Batch;
 
-use MediaWiki\User\UserIdentity;
+use MediaWiki\User\User;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
 class BatchList {
-	/** @var string */
-	private $name;
-	/** @var UserIdentity */
-	private $owner;
+	private string $name;
+	private User $owner;
 
 	public function __construct(
 		string $name,
-		UserIdentity $owner
+		User $owner
 	) {
 		$this->name = $name;
 		$this->owner = $owner;
@@ -27,7 +25,7 @@ class BatchList {
 		return $this->name;
 	}
 
-	public function getOwner(): UserIdentity {
+	public function getOwner(): User {
 		return $this->owner;
 	}
 }

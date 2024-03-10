@@ -8,14 +8,11 @@ namespace MediaWiki\Extension\WikibaseStatementUpdater\Batch;
  * @license GPL-2.0-or-later
  */
 class BatchItem {
+	private string $subject;
 	/** @var string */
-	private $subject;
-	/** @var string */
-	private $command;
-	/** @var string */
-	private $commandId;
-	/** @var string */
-	private $value;
+	private string $command;
+	private string $commandId;
+	private string $value;
 
 	public function __construct(
 		string $subject,

@@ -15,16 +15,11 @@ use MediaWiki\OAuthClient\Client;
  * @license GPL-2.0-or-later
  */
 class UpdateManager {
-	/** @var BatchStore */
-	private $batchStore;
-	/** @var BatchListStore */
-	private $batchListStore;
-	/** @var AccessTokenStore */
-	private $accessTokenStore;
-	/** @var Client */
-	private $client;
-	/** @var string */
-	private $api;
+	private BatchStore $batchStore;
+	private BatchListStore $batchListStore;
+	private AccessTokenStore $accessTokenStore;
+	private Client $client;
+	private string $api;
 
 	public function __construct(
 		BatchStore $batchStore,
@@ -41,8 +36,6 @@ class UpdateManager {
 	}
 
 	/**
-	 * @param int $batchItemId
-	 * @param int $batchListId
 	 * @suppress PhanTypeMismatchArgumentNullable FIXME $record and $accessToken can be null
 	 */
 	public function process( int $batchItemId, int $batchListId ): void {

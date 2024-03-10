@@ -10,8 +10,7 @@ use RuntimeException;
  * @license GPL-2.0-or-later
  */
 class ParsingFailure extends RuntimeException {
-	/** @var string */
-	private $lineText;
+	private string $lineText;
 
 	public function __construct( int $line, string $lineText ) {
 		$this->line = $line;

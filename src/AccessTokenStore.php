@@ -13,8 +13,7 @@ use Wikimedia\LightweightObjectStore\ExpirationAwareness;
  * @license GPL-2.0-or-later
  */
 class AccessTokenStore {
-	/** @var BagOStuff */
-	private $cache;
+	private BagOStuff $cache;
 
 	public function __construct( BagOStuff $cache ) {
 		$this->cache = $cache;
@@ -33,7 +32,7 @@ class AccessTokenStore {
 		return $accessToken;
 	}
 
-	public function set( UserIdentity $u, Token $token ) {
+	public function set( UserIdentity $u, Token $token ): void {
 		$tokenString = $token->key . '|' . $token->secret;
 		$this->cache->set(
 			$this->cache->makeKey( __CLASS__, $u->getId() ),

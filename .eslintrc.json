@@ -1,11 +1,7 @@
 {
 	"root": true,
 	"extends": [
-		"wikimedia/client-es6",
+		"wikimedia/server",
 		"wikimedia/mediawiki"
-	],
-	"rules": {
-		"no-implicit-globals": "off",
-		"compat/compat": "off"
-	}
+	]
 }

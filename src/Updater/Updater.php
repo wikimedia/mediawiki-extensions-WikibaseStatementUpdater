@@ -13,14 +13,10 @@ use MediaWiki\OAuthClient\Token;
  * @license GPL-2.0-or-later
  */
 class Updater {
-	/** @var Client */
-	private $client;
-	/** @var string */
-	private $api;
-	/** @var BatchItem */
-	private $item;
-	/** @var Token */
-	private $accessToken;
+	private Client $client;
+	private string $api;
+	private BatchItem $item;
+	private Token $accessToken;
 
 	public function __construct(
 		Client $client,
@@ -80,7 +76,7 @@ class Updater {
 	 * @throws Exception
 	 * @throws ApiFailure
 	 */
-	private function makeRequest( $params, $isPost, $postParams ): array {
+	private function makeRequest( array $params, bool $isPost, ?array $postParams ): array {
 		$params += [
 			'format' => 'json',
 			'errorformat' => 'wikitext',
