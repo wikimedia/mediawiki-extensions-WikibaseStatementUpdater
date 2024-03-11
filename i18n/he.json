@@ -31,5 +31,6 @@
 	"wsu-batchtable-value": "ערך",
 	"wsu-batchtable-status": "מצב",
 	"wsu-js-batchtable-status": "התקדמות: $1%. {{PLURAL:$2|אחד נכשל.|$2 נכשלו.|0=}}",
-	"apihelp-wikibasestatementupdater-summary": "ניהול אצוות של עדכון קביעות ויקיבייס"
+	"apihelp-wikibasestatementupdater-summary": "ניהול אצוות של עדכון קביעות ויקיבייס",
+	"apihelp-wikibasestatementupdater-param-batch": "מזהה אצווה"
 }
