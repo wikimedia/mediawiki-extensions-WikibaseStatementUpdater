@@ -30,5 +30,6 @@
 	"wsu-batchtable-value": "Вредност",
 	"wsu-batchtable-status": "Состојба",
 	"wsu-js-batchtable-status": "$1 % завршено. {{PLURAL:$2|0=|$2 неуспешни.}}",
-	"apihelp-wikibasestatementupdater-summary": "Раководење со купчиња на Подновувачот на искази во Викибазата"
+	"apihelp-wikibasestatementupdater-summary": "Раководење со купчиња на Подновувачот на искази во Викибазата",
+	"apihelp-wikibasestatementupdater-param-batch": "Назнака на купчето"
 }
