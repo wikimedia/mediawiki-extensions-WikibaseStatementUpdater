@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Eulalio",
 			"Fitoschido"
 		]
 	},
@@ -12,5 +13,6 @@
 	"wsu-batchtable-command": "Orden",
 	"wsu-batchtable-id": "Id.",
 	"wsu-batchtable-value": "Valor",
-	"wsu-batchtable-status": "Estado"
+	"wsu-batchtable-status": "Estado",
+	"apihelp-wikibasestatementupdater-param-batch": "ID del lote"
 }
