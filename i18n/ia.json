@@ -29,5 +29,6 @@
 	"wsu-batchtable-value": "Valor",
 	"wsu-batchtable-status": "Stato",
 	"wsu-js-batchtable-status": "$1% complete. {{PLURAL:$2|0=|$2 fallite.}}",
-	"apihelp-wikibasestatementupdater-summary": "Gerer lotes del Actualisator de Declarationes Wikibase"
+	"apihelp-wikibasestatementupdater-summary": "Gerer lotes del Actualisator de Declarationes Wikibase",
+	"apihelp-wikibasestatementupdater-param-batch": "ID del lot"
 }
