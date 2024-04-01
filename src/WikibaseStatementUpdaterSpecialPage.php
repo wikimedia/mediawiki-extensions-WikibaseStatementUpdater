@@ -354,10 +354,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		$output->addHTML( $form );
 
 		if ( !$list ) {
-			$output->wrapWikiTextAsInterface(
-				'errorbox',
-				$this->msg( 'wsu-unknown-batch' )->plain()
-			);
+			$output->wrapWikiMsg( Html::errorBox( '$1' ), 'wsu-unknown-batch' );
 			return;
 		}
 
