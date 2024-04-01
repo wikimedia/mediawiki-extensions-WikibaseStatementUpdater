@@ -21,6 +21,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\OAuthClient\Client;
 use MediaWiki\OAuthClient\Exception;
 use MediaWiki\OAuthClient\Token;
+use Message;
 use OOUI\ButtonGroupWidget;
 use OOUI\ButtonInputWidget;
 use OOUI\ButtonWidget;
@@ -79,8 +80,8 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 	}
 
 	/** @inheritDoc */
-	public function getDescription(): string {
-		return $this->msg( 'wsu-special-wikibasestatementupdater' )->text();
+	public function getDescription(): Message {
+		return $this->msg( 'wsu-special-wikibasestatementupdater' );
 	}
 
 	/** @inheritDoc */
