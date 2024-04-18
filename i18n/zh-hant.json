@@ -30,5 +30,6 @@
 	"wsu-batchtable-value": "值",
 	"wsu-batchtable-status": "狀態",
 	"wsu-js-batchtable-status": "$1 完成。{{PLURAL:$2|0=|$2 個失敗。}}",
-	"apihelp-wikibasestatementupdater-summary": "管理 Wikibase 陳述更新批次處理"
+	"apihelp-wikibasestatementupdater-summary": "管理 Wikibase 陳述更新批次處理",
+	"apihelp-wikibasestatementupdater-param-batch": "批次 ID"
 }
