@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			")8",
-			"Shizhao"
+			"Shizhao",
+			"沈澄心"
 		]
 	},
 	"wsu-desc": "用于更新和添加Wikibase陈述的工具",
@@ -30,5 +31,6 @@
 	"wsu-batchtable-value": "值",
 	"wsu-batchtable-status": "状态",
 	"wsu-js-batchtable-status": "$1%完成。{{PLURAL:$2|0=|$2个失败。}}",
-	"apihelp-wikibasestatementupdater-summary": "管理Wikibase声明更新程序批处理"
+	"apihelp-wikibasestatementupdater-summary": "管理Wikibase声明更新程序批处理",
+	"apihelp-wikibasestatementupdater-param-batch": "批次ID"
 }
