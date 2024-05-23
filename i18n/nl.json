@@ -31,5 +31,6 @@
 	"wsu-batchtable-value": "Waarde",
 	"wsu-batchtable-status": "Status",
 	"wsu-js-batchtable-status": "$1% voltooid. {{PLURAL:$2|0=|$2 mislukt.}}",
-	"apihelp-wikibasestatementupdater-summary": "Beheer van partijen in het bijwerkprogramma Wikibase-verklaringen"
+	"apihelp-wikibasestatementupdater-summary": "Beheer van partijen in het bijwerkprogramma Wikibase-verklaringen",
+	"apihelp-wikibasestatementupdater-param-batch": "Batch-ID"
 }
