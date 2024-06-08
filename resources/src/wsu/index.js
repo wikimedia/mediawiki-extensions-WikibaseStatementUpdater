@@ -24,7 +24,7 @@ function showBatchStatus() {
 			action: 'wikibasestatementupdater',
 			batch: batch,
 			formatversion: 2
-		} ).then( function ( result ) {
+		} ).then( ( result ) => {
 			const wsu = result.wikibasestatementupdater;
 
 			// Batch not yet started
@@ -54,9 +54,9 @@ function showBatchStatus() {
 	};
 
 	const updateLoop = function ( func ) {
-		func().then( function ( shouldContinue ) {
+		func().then( ( shouldContinue ) => {
 			if ( shouldContinue ) {
-				setTimeout( function () {
+				setTimeout( () => {
 					updateLoop( func );
 				}, 5000 );
 			}
