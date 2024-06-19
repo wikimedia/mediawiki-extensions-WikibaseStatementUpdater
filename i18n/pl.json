@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"Woytecr"
+		]
+	},
+	"wsu-desc": "Narzędzie do aktualizacji jak i dodawania stwierdzeń w Wikibase",
+	"wsu-special-wikibasestatementupdater": "Masowe zmienianie stwierdzeń",
+	"wsu-wsu-batch-title": "Nazwa partii",
+	"wsu-wsu-batch-contents": "Polecenia w formacie Quick Statements V1",
+	"wsu-wsu-error": "Nie można zrozumieć poleceń: $1",
+	"wsu-wsu-error-linetooshort": "Linia $1 jest za krótka.",
+	"wsu-wsu-error-noqualifiers": "Kwalifikatory nie są jeszcze obsługiwane.",
+	"wsu-wsu-error-onlyq": "Obsługiwane są tylko elementy Q.",
+	"wsu-wsu-error-unsupportedcommand": "Nieznane polecenie.",
+	"wsu-your-batches": "{{GENDER:|Utworzyłeś|Utworzyłaś}} następujące zestawy:",
+	"wsu-unknown-batch": "Nieznany zestaw",
+	"wsu-goback": "Powrót do listy",
+	"wsu-start": "(Ponownie) rozpocznij edycję",
+	"wsu-stop": "Zatrzymaj edycję",
+	"wsu-updater-api-failure": "Nie udało się przeanalizować odpowiedzi API",
+	"wsu-updater-ambiguous-update": "Właściwość ma wiele stwierdzeń",
+	"wsu-give-permission": "To narzędzie potrzebuje uprawnień do edytowania w {{GENDER:|Twoim}} imieniu. [[$1|Nadaj uprawnienia]].",
+	"wsu-create-batch": "Utwórz nowy zestaw",
+	"wsu-command-P": "Właściwość",
+	"wsu-batchtable-subject": "Obiekt",
+	"wsu-batchtable-command": "Polecenie",
+	"wsu-batchtable-id": "ID",
+	"wsu-batchtable-value": "Wartość",
+	"wsu-batchtable-status": "Stan",
+	"wsu-js-batchtable-status": "Ukończono $1%. {{PLURAL:$2| 0=| $2 nie powiodło się.}}"
+}
