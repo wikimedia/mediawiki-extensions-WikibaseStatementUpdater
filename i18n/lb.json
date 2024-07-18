@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"wsu-wsu-error-linetooshort": "Linn $1 ass ze kuerz.",
@@ -9,5 +10,6 @@
 	"wsu-command-P": "Eegenschaft",
 	"wsu-batchtable-subject": "Sujet",
 	"wsu-batchtable-id": "ID",
-	"wsu-batchtable-value": "Wäert"
+	"wsu-batchtable-value": "Wäert",
+	"wsu-batchtable-status": "Status"
 }
