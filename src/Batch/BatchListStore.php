@@ -73,7 +73,7 @@ class BatchListStore {
 		}
 
 		$userFactory = MediaWiki\MediaWikiServices::getInstance()->getUserFactory();
-		$user = $userFactory->newFromActorId( $row->wsubl_actor );
+		$user = $userFactory->newFromActorId( (int)$row->wsubl_actor );
 
 		return new BatchListRecord(
 			$row->wsubl_name,
