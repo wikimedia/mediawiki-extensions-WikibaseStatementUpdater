@@ -34,7 +34,7 @@ class Updater {
 	public function update(): array {
 		try {
 			$response = $this->getClaims( $this->item );
-			$claims = $response['claims'][$this->item->getCommandId()];
+			$claims = $response['claims'][$this->item->getCommandId()] ?? [];
 
 			$count = count( $claims );
 			if ( $count === 0 ) {
