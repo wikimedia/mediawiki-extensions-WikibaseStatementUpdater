@@ -18,11 +18,11 @@ return [
 	},
 
 	'WSU:BatchListStore' => static function ( MediaWikiServices $s ): BatchListStore {
-		return new BatchListStore( $s->getDBLoadBalancer()->getConnectionRef( DB_PRIMARY ) );
+		return new BatchListStore( $s->getDBLoadBalancerFactory()->getPrimaryDatabase() );
 	},
 
 	'WSU:BatchStore' => static function ( MediaWikiServices $s ): BatchStore {
-		return new BatchStore( $s->getDBLoadBalancer()->getConnectionRef( DB_PRIMARY ) );
+		return new BatchStore( $s->getDBLoadBalancerFactory()->getPrimaryDatabase() );
 	},
 
 	'WSU:OAuthClient' => static function ( MediaWikiServices $s ): Client {
