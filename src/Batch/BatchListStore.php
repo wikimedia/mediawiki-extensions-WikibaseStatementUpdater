@@ -88,7 +88,8 @@ class BatchListStore {
 		$this->db->update(
 			self::TABLE,
 			[ 'wsubl_status' => $status ],
-			[ 'wsubl_id' => $record->getId() ]
+			[ 'wsubl_id' => $record->getId() ],
+			__METHOD__
 		);
 	}
 }
