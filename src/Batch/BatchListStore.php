@@ -84,7 +84,7 @@ class BatchListStore {
 		);
 	}
 
-	public function updateStatus( BatchListRecord $record, string $status = null ): void {
+	public function updateStatus( BatchListRecord $record, ?string $status = null ): void {
 		$this->db->update(
 			self::TABLE,
 			[ 'wsubl_status' => $status ],
