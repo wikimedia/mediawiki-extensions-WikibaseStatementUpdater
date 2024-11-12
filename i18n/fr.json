@@ -4,7 +4,8 @@
 			"Cantons-de-l'Est",
 			"Gomoko",
 			"Kimyungjog",
-			"Verdy p"
+			"Verdy p",
+			"Mahabarata"
 		]
 	},
 	"wsu-extension-name": "Wikibase Statement Updater",
@@ -33,5 +34,6 @@
 	"wsu-batchtable-value": "Valeur",
 	"wsu-batchtable-status": "État",
 	"wsu-js-batchtable-status": "$1 % terminé. {{PLURAL:$2|0=|$2 en échec.}}",
-	"apihelp-wikibasestatementupdater-summary": "Gérer les lots de mise à jour de déclarations de Wikibase"
+	"apihelp-wikibasestatementupdater-summary": "Gérer les lots de mise à jour de déclarations de Wikibase",
+	"apihelp-wikibasestatementupdater-param-batch": "Identifiant du lot"
 }
