@@ -19,7 +19,7 @@ class BatchListRecord extends BatchList {
 		User $owner,
 		int $id,
 		int $createdAt,
-		string $status = null
+		?string $status = null
 	) {
 		parent::__construct( $name, $owner );
 		$this->id = $id;
