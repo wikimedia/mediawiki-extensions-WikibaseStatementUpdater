@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Meno25"
+		]
+	},
+	"wsu-desc": "أداة لتحديث وإضافة بيانات Wikibase",
+	"wsu-special-wikibasestatementupdater": "بيانات التحديث الشامل",
+	"wsu-wsu-batch-title": "اسم الدفعة",
+	"wsu-wsu-batch-contents": "الأوامر بتنسيق Quick Statements V1",
+	"wsu-wsu-error": "غير قادر على تحليل الأوامر: $1",
+	"wsu-wsu-error-linetooshort": "الخط $1 قصير جدًا.",
+	"wsu-wsu-error-noqualifiers": "لم يتم دعم المؤهلات بعد.",
+	"wsu-wsu-error-onlyq": "يتم دعم العناصر Q فقط.",
+	"wsu-wsu-error-unsupportedcommand": "أمر غير معروف.",
+	"wsu-your-batches": "{{GENDER:|لقد}} قمت بإنشاء الدفعات التالية:",
+	"wsu-unknown-batch": "دفعة غير معروفة",
+	"wsu-goback": "العودة إلى القائمة",
+	"wsu-start": "(إعادة) بدء التحرير",
+	"wsu-stop": "توقف عن التحرير",
+	"wsu-updater-api-failure": "غير قادر على تحليل استجابة واجهة برمجة التطبيقات",
+	"wsu-updater-ambiguous-update": "الخاصية لها عبارات متعددة",
+	"wsu-give-permission": "تحتاج هذه الأداة إلى إذن لإجراء تعديلات نيابة {{GENDER:|عنك}}. [[$1|إعطاء الأذونات]].",
+	"wsu-create-batch": "إنشاء دفعة جديدة",
+	"wsu-command-P": "ملكية",
+	"wsu-batchtable-subject": "موضوع",
+	"wsu-batchtable-command": "أمر",
+	"wsu-batchtable-id": "المعرف",
+	"wsu-batchtable-value": "القيمة",
+	"wsu-batchtable-status": "الحالة",
+	"wsu-js-batchtable-status": "تم إكمال $1 %. {{PLURAL:$2|0=|$2 فشل.}}",
+	"apihelp-wikibasestatementupdater-summary": "إدارة دفعات تحديث بيان Wikibase",
+	"apihelp-wikibasestatementupdater-param-batch": "معرف الدفعة"
+}
