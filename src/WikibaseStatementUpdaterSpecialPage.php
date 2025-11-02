@@ -3,7 +3,6 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\WikibaseStatementUpdater;
 
-use Html;
 use HTMLForm;
 use JobQueueGroup;
 use MediaWiki\Extension\WikibaseStatementUpdater\Batch\BatchList;
@@ -16,11 +15,13 @@ use MediaWiki\Extension\WikibaseStatementUpdater\Parser\QualifiersUnsupported;
 use MediaWiki\Extension\WikibaseStatementUpdater\Parser\UnsupportedCommand;
 use MediaWiki\Extension\WikibaseStatementUpdater\Parser\V1Parser;
 use MediaWiki\Extension\WikibaseStatementUpdater\Updater\UpdateJob;
+use MediaWiki\Html\Html;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\OAuthClient\Client;
 use MediaWiki\OAuthClient\Exception;
 use MediaWiki\OAuthClient\Token;
+use MediaWiki\Title\Title;
 use Message;
 use OOUI\ButtonGroupWidget;
 use OOUI\ButtonInputWidget;
@@ -30,7 +31,6 @@ use OOUI\HtmlSnippet;
 use Psr\Log\LoggerInterface;
 use SpecialPage;
 use ThrottledError;
-use Title;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
