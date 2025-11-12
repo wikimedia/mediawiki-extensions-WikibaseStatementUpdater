@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"wsu-extension-name": "Actualizador de declaracións de Wikibase",
+	"wsu-desc": "Ferramenta para actualizar e engadir declaracións de Wikibase",
+	"wsu-special-wikibasestatementupdater": "Actualización masiva de declaracións",
+	"wsu-wsu-batch-title": "Nome do lote",
+	"wsu-wsu-batch-contents": "Comandos en formato Quick Statements V1",
+	"wsu-wsu-error": "Non se puideron analizar os comandos: $1",
+	"wsu-wsu-error-linetooshort": "A liña $1 é demasiado curta.",
+	"wsu-wsu-error-noqualifiers": "Aínda non se admiten os cualificadores.",
+	"wsu-wsu-error-onlyq": "Só se admiten elementos Q.",
+	"wsu-wsu-error-unsupportedcommand": "Comando descoñecido.",
+	"wsu-your-batches": "{{GENDER:|Creaches}} os seguintes lotes:",
+	"wsu-unknown-batch": "Lote descoñecido",
+	"wsu-goback": "Volver á lista",
+	"wsu-start": "(Re)iniciar a edición",
+	"wsu-stop": "Deixar de editar",
+	"wsu-updater-api-failure": "Non se pode analizar a resposta da API",
+	"wsu-updater-ambiguous-update": "A propiedade ten varias declaracións",
+	"wsu-give-permission": "Esta ferramenta necesita algúns permisos para facer edicións no teu nome. [[$1|Conceder os permisos]].",
+	"wsu-create-batch": "Crear lote novo",
+	"wsu-command-P": "Propiedade",
+	"wsu-batchtable-subject": "Asunto",
+	"wsu-batchtable-command": "Comando",
+	"wsu-batchtable-id": "ID",
+	"wsu-batchtable-value": "Valor",
+	"wsu-batchtable-status": "Estado",
+	"wsu-js-batchtable-status": "$1 % completado. {{PLURAL:$2|0=|$2 fallou|$2 fallaron.}}",
+	"apihelp-wikibasestatementupdater-summary": "Xestionar os lotes do actualizador de declaracións de Wikibase"
+}
