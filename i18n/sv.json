@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sabelöga"
+			"Sabelöga",
+			"Stefan2255"
 		]
 	},
 	"wsu-extension-name": "Wikibase Statement Updater",
@@ -30,5 +31,6 @@
 	"wsu-batchtable-value": "Värde",
 	"wsu-batchtable-status": "Status",
 	"wsu-js-batchtable-status": "$1% slutfört. {{PLURAL:$2|0=|$2 misslyckades.}}",
-	"apihelp-wikibasestatementupdater-summary": "Hantera Wikibase Statement Updater-batchar."
+	"apihelp-wikibasestatementupdater-summary": "Hantera Wikibase Statement Updater-batchar.",
+	"apihelp-wikibasestatementupdater-param-batch": "Batch-ID"
 }
