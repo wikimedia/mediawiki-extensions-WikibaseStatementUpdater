@@ -14,7 +14,7 @@
 	],
 	"require": {
 		"composer/installers": ">=1.0.1",
-		"mediawiki/oauthclient": "^1.1"
+		"mediawiki/oauthclient": "^2.3"
 	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "50.0.0",
