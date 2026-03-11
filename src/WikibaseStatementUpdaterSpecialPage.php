@@ -302,6 +302,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 
 	private function showBatch( int $id ): void {
 		$db = $this->connectionProvider->getReplicaDatabase();
+		// @phan-suppress-next-line PhanTypeMismatchArgumentSuperType Used for reads only
 		$batchListStore = new BatchListStore( $db );
 		$list = $batchListStore->get( $id );
 
@@ -352,7 +353,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 		}
 
 		$form->appendContent( new ButtonGroupWidget( [ 'items' => $buttons ] ) );
-		$output->addHTML( $form );
+		$output->addHTML( (string)$form );
 
 		if ( !$list ) {
 			$output->wrapWikiMsg( Html::errorBox( '$1' ), 'wsu-unknown-batch' );
@@ -363,6 +364,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 			Html::element( 'h2', [ 'class' => 'mw-ext-wsu-heading' ], $list->getName() )
 		);
 
+		// @phan-suppress-next-line PhanTypeMismatchArgumentSuperType Used for reads only
 		$batchStore = new BatchStore( $db );
 		$items = $batchStore->getRecords( $list );
 
@@ -437,6 +439,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 
 	private function showBatchList(): void {
 		$db = $this->connectionProvider->getReplicaDatabase();
+		// @phan-suppress-next-line PhanTypeMismatchArgumentSuperType Used for reads only
 		$batchListStore = new BatchListStore( $db );
 		$batches = $batchListStore->getForUser( $this->getUser() );
 		$output = $this->getOutput();
@@ -453,7 +456,7 @@ class WikibaseStatementUpdaterSpecialPage extends SpecialPage {
 				]
 			)
 		);
-		$output->addHtml( $form );
+		$output->addHtml( (string)$form );
 
 		if ( $batches ) {
 			$output->addWikiMsg( 'wsu-your-batches' );

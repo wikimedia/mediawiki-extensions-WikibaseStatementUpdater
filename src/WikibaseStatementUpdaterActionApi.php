@@ -28,6 +28,7 @@ class WikibaseStatementUpdaterActionApi extends ApiBase {
 		$id = $this->getParameter( 'batch' );
 
 		$db = $this->loadBalancer->getReplicaDatabase();
+		// @phan-suppress-next-line PhanTypeMismatchArgumentSuperType Used for reads only
 		$batchListStore = new BatchListStore( $db );
 		$list = $batchListStore->get( $id );
 
@@ -35,6 +36,7 @@ class WikibaseStatementUpdaterActionApi extends ApiBase {
 			$this->dieWithError( [ 'apierror-badparameter', 'batch' ] );
 		}
 
+		// @phan-suppress-next-line PhanTypeMismatchArgumentSuperType Used for reads only
 		$batchStore = new BatchStore( $db );
 		$items = $batchStore->getRecords( $list );
 
