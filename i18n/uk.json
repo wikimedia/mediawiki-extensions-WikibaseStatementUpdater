@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"DDPAT",
-			"Ice bulldog"
+			"Ice bulldog",
+			"Movses"
 		]
 	},
 	"wsu-extension-name": "Оновлення заяв ВІкібази",
 	"wsu-desc": "Інструмент для оновлення та додавання висловлювань Вікібази",
 	"wsu-special-wikibasestatementupdater": "Заяви про масове оновлення",
-	"wsu-wsu-batch-title": "Назва партії",
+	"wsu-wsu-batch-title": "Назва пакету",
 	"wsu-wsu-batch-contents": "Команди у форматі Quick Statements v1",
 	"wsu-wsu-error": "Не вдається проаналізувати команди: $1",
 	"wsu-wsu-error-linetooshort": "Рядок $1 закороткий.",
@@ -16,7 +17,7 @@
 	"wsu-wsu-error-onlyq": "Підтримуються лише Q-елементи.",
 	"wsu-wsu-error-unsupportedcommand": "Невідома команда.",
 	"wsu-your-batches": "{{GENDER:|Ви}} створили такі пакети:",
-	"wsu-unknown-batch": "Невідома партія",
+	"wsu-unknown-batch": "Невідомий пакет",
 	"wsu-goback": "Назад до списку",
 	"wsu-start": "(Почати) редагування",
 	"wsu-stop": "Зупинити редагування",
@@ -31,5 +32,6 @@
 	"wsu-batchtable-value": "Значення",
 	"wsu-batchtable-status": "Статус",
 	"wsu-js-batchtable-status": "$1% завершено. {{PLURAL:$2|0=|$2 не вдалося.}}",
-	"apihelp-wikibasestatementupdater-summary": "Керування пакетами оновлень заяв Вікібази"
+	"apihelp-wikibasestatementupdater-summary": "Керування пакетами оновлень заяв Вікібази",
+	"apihelp-wikibasestatementupdater-param-batch": "Ідентифікатор пакету"
 }
