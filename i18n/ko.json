@@ -27,7 +27,7 @@
 	"wsu-command-P": "속성",
 	"wsu-batchtable-subject": "주제",
 	"wsu-batchtable-command": "명령",
-	"wsu-batchtable-id": "Id",
+	"wsu-batchtable-id": "ID",
 	"wsu-batchtable-value": "값",
 	"wsu-batchtable-status": "상태",
 	"wsu-js-batchtable-status": "$1% 완료. {{PLURAL:$2|0=|$2개 실패.}}",
