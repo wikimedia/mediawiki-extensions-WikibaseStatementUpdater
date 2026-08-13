@@ -29,5 +29,7 @@
 	"wsu-batchtable-command": "Comando",
 	"wsu-batchtable-id": "Id",
 	"wsu-batchtable-value": "Valor",
-	"wsu-batchtable-status": "Status"
+	"wsu-batchtable-status": "Status",
+	"wsu-js-batchtable-status": "$1% concluído. {{PLURAL:$2|0=|1=$2 falhou.|$2 falharam.}}",
+	"apihelp-wikibasestatementupdater-summary": "Gerenciar os conjuntos do Atualizador de Declarações Wikibase"
 }
