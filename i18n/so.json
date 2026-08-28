@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"wsu-desc": "Qalab loogu talagalay cusboonaysiinta iyo ku darista bayaannada Wikibase",
+	"wsu-special-wikibasestatementupdater": "Cusboonaysii bayaannada tiro badan",
+	"wsu-wsu-batch-title": "Magaca dufcadda",
+	"wsu-wsu-batch-contents": "Amarrada qaabka Quick Statements V1",
+	"wsu-wsu-error": "Lama kala saari karo amarrada: $1",
+	"wsu-wsu-error-linetooshort": "Xariiqda $1 aad bay u gaaban tahay.",
+	"wsu-wsu-error-noqualifiers": "Qeexayaasha weli lama taageero.",
+	"wsu-wsu-error-onlyq": "Kaliya walxaha Q ayaa la taageeraa.",
+	"wsu-wsu-error-unsupportedcommand": "Amar aan la aqoon.",
+	"wsu-your-batches": "{{GENDER:|Waxaad}} abuurtay dufcadahan soo socda:",
+	"wsu-unknown-batch": "Dufcad aan la aqoon",
+	"wsu-goback": "Ku noqo liiska",
+	"wsu-start": "Dib u bilow tafatirka",
+	"wsu-stop": "Jooji tafatirka",
+	"wsu-updater-api-failure": "Lama kala saari karo jawaabta API-ga",
+	"wsu-updater-ambiguous-update": "Hantidu waxay leedahay bayaanno badan",
+	"wsu-give-permission": "Qalabkani wuxuu u baahan yahay oggolaansho uu ku sameeyo tafatirro isagoo ku metelaya {{GENDER:|adiga}}. [[$1|Sii oggolaanshaha]].",
+	"wsu-create-batch": "Abuur dufcad cusub",
+	"wsu-command-P": "Hanti",
+	"wsu-batchtable-subject": "Mawduuc",
+	"wsu-batchtable-command": "Amar",
+	"wsu-batchtable-id": "Aqoonsi",
+	"wsu-batchtable-value": "Qiimaha",
+	"wsu-batchtable-status": "Xaaladda",
+	"wsu-js-batchtable-status": "$1% la dhammaystiray. {{PLURAL:$2|0=|$2 fashilmay.}}",
+	"apihelp-wikibasestatementupdater-summary": "Maamul dufcadaha Cusboonaysiiyaha Bayaannada Wikibase",
+	"apihelp-wikibasestatementupdater-param-batch": "Aqoonsiga dufcadda"
+}
