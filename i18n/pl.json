@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"PanWor",
 			"Woytecr"
 		]
 	},
@@ -13,7 +14,7 @@
 	"wsu-wsu-error-noqualifiers": "Kwalifikatory nie są jeszcze obsługiwane.",
 	"wsu-wsu-error-onlyq": "Obsługiwane są tylko elementy Q.",
 	"wsu-wsu-error-unsupportedcommand": "Nieznane polecenie.",
-	"wsu-your-batches": "{{GENDER:|Utworzyłeś|Utworzyłaś}} następujące zestawy:",
+	"wsu-your-batches": "{{GENDER:|Utworzyłeś|Utworzyłaś|Udało Ci się utworzyć}} następujące zestawy:",
 	"wsu-unknown-batch": "Nieznany zestaw",
 	"wsu-goback": "Powrót do listy",
 	"wsu-start": "(Ponownie) rozpocznij edycję",
